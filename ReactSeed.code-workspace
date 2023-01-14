@@ -71,12 +71,8 @@
 		"eslint.workingDirectories": [],
 		"files.autoGuessEncoding": true,
 		"files.exclude": {
-			"**/.pnp.cjs": true,
-			"**/app-site*": true,
 			"**/node_modules": true,
-			"**/vendor-*": true,
-			"**/yarn-*": true,
-			"yarn.lock": true
+			"**/.pnp.cjs": true
 		},
 		"files.trimFinalNewlines": true,
 		"files.trimTrailingWhitespace": true,
