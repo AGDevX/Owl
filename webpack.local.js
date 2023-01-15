@@ -8,10 +8,10 @@ const webpackConfig = require('./webpack.config.js');
 const env = require('./environments/env.dev');
 
 module.exports = merge(webpackConfig, {
-	mode: env.nodeEnvironment,
+	mode: env.environment.node,
 	stats: 'minimal',
 	output: {
-		path: path.resolve(__dirname, `./dist/${env.environment}`),
+		path: path.resolve(__dirname, `./dist/${env.environment.app}`),
 		publicPath: env.host.publicPath
 	},
 	plugins: [
@@ -40,7 +40,7 @@ module.exports = merge(webpackConfig, {
 		new FileManagerPlugin({
 			events: {
 				onEnd: {
-					move: [{ source: `./dist/${env.environment}/assets/manifest.webmanifest`, destination: `./dist/${env.environment}/manifest.webmanifest` }]
+					move: [{ source: `./dist/${env.environment.app}/assets/manifest.webmanifest`, destination: `./dist/${env.environment.app}/manifest.webmanifest` }]
 				}
 			}
 		})

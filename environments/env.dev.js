@@ -1,6 +1,8 @@
 module.exports = {
-	environment: 'local',
-	nodeEnvironment: 'development',
+	environment: {
+		app: 'local',
+		node: 'development'
+	},
 	host: {
 		publicPath: '/'
 	},
