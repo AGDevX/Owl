@@ -7,26 +7,29 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const webpackConfig = require('./webpack.config.js');
 const env = require('./environments/env.local');
 
+const srcPublicPath = './src/public';
+const distPath = `./dist/${env.environment.app}`;
+
 module.exports = merge(webpackConfig, {
 	mode: env.environment.node,
 	stats: 'minimal',
 	output: {
-		path: path.resolve(__dirname, `./dist/${env.environment.app}`),
+		path: path.resolve(__dirname, distPath),
 		publicPath: env.host.publicPath
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: 'body',
 			base: env.host.publicPath,
-			template: './src/public/index.html',
+			template: `${srcPublicPath}/index.html`,
 			filename: './index.html',
 			title: env.appName
 		}),
 		new FaviconsWebpackPlugin({
-			logo: './src/public/assets/logo.svg',
+			logo: `${srcPublicPath}/assets/logo.svg`,
 			cache: true,
 			inject: true,
-			manifest: './src/public/manifest.webmanifest',
+			manifest: `${srcPublicPath}/manifest.webmanifest`,
 			favicons: {
 				appName: env.appName,
 				icons: {
@@ -42,7 +45,8 @@ module.exports = merge(webpackConfig, {
 		new FileManagerPlugin({
 			events: {
 				onEnd: {
-					move: [{ source: `./dist/${env.environment.app}/assets/manifest.webmanifest`, destination: `./dist/${env.environment.app}/manifest.webmanifest` }]
+					copy: [{ source: `${srcPublicPath}/robots.txt`, destination: `${distPath}/robots.txt` }],
+					move: [{ source: `${distPath}/assets/manifest.webmanifest`, destination: `${distPath}/manifest.webmanifest` }]
 				}
 			}
 		})
