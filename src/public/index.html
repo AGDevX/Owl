@@ -7,9 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<title><%= htmlWebpackPlugin.options.title %></title>
-
-		<link rel="manifest" href="manifest.json" />
-		<script src="../index.js"></script>
 	</head>
-	<body></body>
+	<body>
+		<noscript><%= htmlWebpackPlugin.options.title %> would be pretty boring without JavaScript. Please enable it!</noscript>
+		<div id="app"></div>
+	</body>
 </html>

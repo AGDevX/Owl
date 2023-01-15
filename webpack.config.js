@@ -6,5 +6,19 @@ module.exports = {
 	output: {
 		filename: '[name].bundle.js',
 		clean: true
+	},
+	module: {
+		rules: [
+			{
+				test: /\.m?js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env']
+					}
+				}
+			}
+		]
 	}
 };

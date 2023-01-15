@@ -1,9 +1,12 @@
-function component() {
-	const element = document.createElement('div');
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
-	element.innerHTML = 'hello webpsack';
+import App from './App';
 
-	return element;
-}
-
-document.body.appendChild(component());
+const rootElement = document.getElementById('app');
+const root = createRoot(rootElement);
+root.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>
+);

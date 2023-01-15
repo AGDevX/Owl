@@ -16,7 +16,9 @@ module.exports = merge(webpackConfig, {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
+			inject: 'body',
 			base: env.host.publicPath,
+			template: './src/public/index.html',
 			filename: './index.html',
 			title: env.appName
 		}),
