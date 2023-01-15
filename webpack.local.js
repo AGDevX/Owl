@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('./webpack.config');
 const env = require('./environments/env.local');
 
 const srcPublicPath = './src/public';
