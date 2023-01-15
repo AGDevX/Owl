@@ -1,4 +1,9 @@
-const asdf = () => {
-	var f = "asdf";
-	for (let i = 1; i < 10; i++) {}
-};
+function component() {
+	const element = document.createElement('div');
+
+	element.innerHTML = 'hello webpack';
+
+	return element;
+}
+
+document.body.appendChild(component());

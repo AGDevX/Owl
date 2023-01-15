@@ -1,4 +1,23 @@
 {
 	"name": "reactseed",
-	"packageManager": "yarn@3.3.1"
+	"version": "1.0.0",
+	"description": "React application template",
+	"keywords": [
+		"react",
+		"seed",
+		"template",
+		"boilerplate"
+	],
+	"author": "AGDevX",
+	"license": "MIT",
+	"private": true,
+	"packageManager": "yarn@3.3.1",
+	"scripts": {
+		"build": "webpack --config webpack/webpack.config.js"
+	},
+	"devDependencies": {
+		"html-webpack-plugin": "^5.5.0",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1"
+	}
 }
