@@ -6,5 +6,5 @@ module.exports = {
 	host: {
 		publicPath: '/'
 	},
-	appName: 'React Seed'
+	appName: 'React Seed (local)'
 };

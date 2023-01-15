@@ -5,7 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const webpackConfig = require('./webpack.config.js');
-const env = require('./environments/env.dev');
+const env = require('./environments/env.local');
 
 module.exports = merge(webpackConfig, {
 	mode: env.environment.node,
