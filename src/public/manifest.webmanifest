@@ -1,0 +1,12 @@
+{
+	"id": "agdevx.reactseed",
+	"name": "React Seed",
+	"short_name": "React Seed",
+	"description": "React application template",
+	"start_url": "/",
+	"orientation": "any",
+	"background_color": "#0083d7",
+	"theme_color": "#0083d7",
+	"display": "standalone",
+	"display_override": ["minimal-ui"]
+}
