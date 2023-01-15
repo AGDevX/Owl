@@ -69,6 +69,10 @@
 		"eslint.useESLintClass": false,
 		"eslint.validate": [],
 		"eslint.workingDirectories": [],
+		"explorer.fileNesting.enabled": true,
+		"explorer.fileNesting.patterns": {
+			"webpack.config.js": "webpack.*.js"
+		},
 		"files.autoGuessEncoding": true,
 		"files.exclude": {
 			"**/node_modules": true,
