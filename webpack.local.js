@@ -1,36 +1,32 @@
+const { merge } = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
-module.exports = {
-	target: 'web',
-	mode: 'development',
+const webpackConfig = require('./webpack.config.js');
+const env = require('./environments/env.dev');
+
+module.exports = merge(webpackConfig, {
+	mode: env.nodeEnvironment,
 	stats: 'minimal',
-	entry: {
-		app: './src/index.js'
-	},
 	output: {
-		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, '../dist'),
-		publicPath: '/',
-		clean: true
+		path: path.resolve(__dirname, `./dist/${env.environment}`),
+		publicPath: env.host.publicPath
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			base: '/',
+			base: env.host.publicPath,
 			filename: './index.html',
-			title: 'React Seed'
+			title: env.appName
 		}),
 		new FaviconsWebpackPlugin({
 			logo: './src/public/assets/logo.svg',
-			mode: 'webapp',
-			devMode: 'webapp',
 			cache: true,
 			inject: true,
 			manifest: './src/public/manifest.webmanifest',
 			favicons: {
-				appName: 'React Seed',
+				appName: env.appName,
 				icons: {
 					android: true,
 					appleIcon: true,
@@ -44,14 +40,14 @@ module.exports = {
 		new FileManagerPlugin({
 			events: {
 				onEnd: {
-					move: [{ source: './dist/assets/manifest.webmanifest', destination: './dist/manifest.webmanifest' }]
+					move: [{ source: `./dist/${env.environment}/assets/manifest.webmanifest`, destination: `./dist/${env.environment}/manifest.webmanifest` }]
 				}
 			}
 		})
 	],
 	devServer: {
 		static: {
-			publicPath: '/'
+			publicPath: env.host.publicPath
 		}
 	}
-};
+});

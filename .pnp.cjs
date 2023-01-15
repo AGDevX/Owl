@@ -34,7 +34,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["html-webpack-plugin", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:5.5.0"],\
             ["webpack", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:5.75.0"],\
             ["webpack-cli", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:5.0.1"],\
-            ["webpack-dev-server", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:4.11.1"]\
+            ["webpack-dev-server", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:4.11.1"],\
+            ["webpack-merge", "npm:5.8.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4111,7 +4112,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["html-webpack-plugin", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:5.5.0"],\
             ["webpack", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:5.75.0"],\
             ["webpack-cli", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:5.0.1"],\
-            ["webpack-dev-server", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:4.11.1"]\
+            ["webpack-dev-server", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:4.11.1"],\
+            ["webpack-merge", "npm:5.8.0"]\
           ],\
           "linkType": "SOFT"\
         }]\

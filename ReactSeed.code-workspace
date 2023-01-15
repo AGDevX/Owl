@@ -72,7 +72,8 @@
 		"files.autoGuessEncoding": true,
 		"files.exclude": {
 			"**/node_modules": true,
-			"**/.pnp.cjs": true
+			"**/.pnp.cjs": true,
+			".pnp.loader.mjs": true
 		},
 		"files.trimFinalNewlines": true,
 		"files.trimTrailingWhitespace": true,
