@@ -13,6 +13,7 @@ const distPath = `./dist/${env.environment.app}`;
 module.exports = merge(webpackConfig, {
 	mode: env.environment.node,
 	stats: 'minimal',
+	devtool: 'eval-cheap-source-map',
 	output: {
 		path: path.resolve(__dirname, distPath),
 		publicPath: env.host.publicPath
@@ -52,6 +53,7 @@ module.exports = merge(webpackConfig, {
 		})
 	],
 	devServer: {
+		historyApiFallback: true,
 		static: {
 			publicPath: env.host.publicPath
 		}

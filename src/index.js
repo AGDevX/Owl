@@ -1,12 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-
-import App from './App';
+import { RouterProvider } from 'react-router-dom';
+import browserRouter from './routing/browserRouter';
 
 const rootElement = document.getElementById('app');
 const root = createRoot(rootElement);
 root.render(
 	<React.StrictMode>
-		<App />
+		<RouterProvider router={browserRouter} />
 	</React.StrictMode>
 );
