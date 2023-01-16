@@ -54,6 +54,7 @@ module.exports = merge(webpackConfig, {
 	],
 	devServer: {
 		historyApiFallback: true,
+		open: true,
 		static: {
 			publicPath: env.host.publicPath
 		}
