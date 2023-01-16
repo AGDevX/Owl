@@ -1,26 +1,7 @@
-import PrivateRoute from '../auth/PrivateRoute';
-import PublicRoute from '../auth/PublicRoute';
-import App from '../App';
-
+import structureRoutes from './routes.structure';
 import homeRoutes from './routes.home';
+import fooBarRoutes from './routes.fooBar';
 
-const allRoutes = [...homeRoutes];
-
-const publicRoute = {
-	element: <PublicRoute />,
-	children: [...allRoutes.filter((r) => !r.private)]
-};
-
-const privateRoute = {
-	element: <PrivateRoute />,
-	children: [...allRoutes.filter((r) => r.private)]
-};
-
-const appRoute = {
-	element: <App />,
-	children: [publicRoute, privateRoute]
-};
-
-const routes = [appRoute];
+const routes = [...structureRoutes, ...homeRoutes, ...fooBarRoutes];
 
 export default routes;

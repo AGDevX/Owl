@@ -1,7 +1,7 @@
-import Layout from './structure/Layout';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
-	return <Layout />;
+	return <Outlet />;
 };
 
 export default App;
