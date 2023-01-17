@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,20 +9,20 @@ const webpackConfig = require('./webpack.config');
 const env = require('./environments/env.local');
 
 const srcPublicPath = './src/public';
-const distPath = `./dist/${env.environment.app}`;
+const distPath = `./dist/${env.ENVIRONMENT.app}`;
 
 module.exports = merge(webpackConfig, {
-	mode: env.environment.node,
+	mode: env.ENVIRONMENT.node,
 	stats: 'minimal',
 	devtool: 'eval-cheap-source-map',
 	output: {
 		path: path.resolve(__dirname, distPath),
-		publicPath: env.host.publicPath
+		publicPath: env.HOST.publicPath
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: 'body',
-			base: env.host.publicPath,
+			base: env.HOST.publicPath,
 			template: `${srcPublicPath}/index.html`,
 			filename: './index.html',
 			title: env.appName
@@ -32,7 +33,7 @@ module.exports = merge(webpackConfig, {
 			inject: true,
 			manifest: `${srcPublicPath}/manifest.webmanifest`,
 			favicons: {
-				appName: env.appName,
+				appName: env.APP.name,
 				icons: {
 					android: true,
 					appleIcon: true,
@@ -50,13 +51,14 @@ module.exports = merge(webpackConfig, {
 					move: [{ source: `${distPath}/assets/manifest.webmanifest`, destination: `${distPath}/manifest.webmanifest` }]
 				}
 			}
-		})
+		}),
+		new webpack.DefinePlugin({ env: JSON.stringify(env) }) //-- stringify to avoid parsing issues (e.g. {"ENVIRONMENT":{"app":local,"node":development},"HOST":{"publicPath":/},"APP":{"name":React Seed (local)},"APP_STATE":{"counter":7}} )
 	],
 	devServer: {
 		historyApiFallback: true,
 		open: true,
 		static: {
-			publicPath: env.host.publicPath
+			publicPath: env.HOST.publicPath
 		}
 	}
 });

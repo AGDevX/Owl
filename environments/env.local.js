@@ -1,10 +1,15 @@
 module.exports = {
-	environment: {
+	ENVIRONMENT: {
 		app: 'local',
 		node: 'development'
 	},
-	host: {
+	HOST: {
 		publicPath: '/'
 	},
-	appName: 'React Seed (local)'
+	APP: {
+		name: 'React Seed (local)'
+	},
+	APP_STATE: {
+		counter: 7
+	}
 };
