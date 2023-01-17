@@ -1,7 +1,7 @@
 import './styles.css';
 
 const Home = () => {
-	return <div>Hi!!</div>;
+	return <div className="silver">Hi!!</div>;
 };
 
 export default Home;
