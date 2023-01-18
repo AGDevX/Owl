@@ -1,3 +1,5 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 module.exports = {
 	target: 'web',
 	entry: {
@@ -7,6 +9,7 @@ module.exports = {
 		filename: '[name].bundle.js',
 		clean: true
 	},
+	plugins: [new ESLintPlugin()],
 	module: {
 		rules: [
 			{

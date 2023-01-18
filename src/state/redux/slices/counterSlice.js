@@ -4,7 +4,7 @@ import { initialState } from '../../initialState';
 export const counterSlice = createSlice({
 	name: 'counter',
 	initialState: {
-		value: initialState.counter
+		value: initialState.APP_INITIAL_STATE.counter
 	},
 	reducers: {
 		increment: (state) => {

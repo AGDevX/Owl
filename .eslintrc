@@ -1,0 +1,6 @@
+{
+	"parser": "@babel/eslint-parser",
+	"rules": {
+		"no-debugger": "off"
+	}
+}

@@ -9,7 +9,7 @@ module.exports = {
 	APP: {
 		name: 'React Seed (local)'
 	},
-	APP_STATE: {
-		counter: 7
+	APP_INITIAL_STATE: {
+		counter: 12
 	}
 };

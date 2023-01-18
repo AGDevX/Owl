@@ -16,11 +16,11 @@ const Counter = () => {
 	return (
 		<div>
 			<div>
-				<button aria-label="Decrement value" onClick={handleDecrement}>
+				<button aria-label='Decrement value' onClick={handleDecrement}>
 					Decrement
 				</button>
 				<span>{count}</span>
-				<button aria-label="Increment value" onClick={handleIncrement}>
+				<button aria-label='Increment value' onClick={handleIncrement}>
 					Increment
 				</button>
 			</div>
