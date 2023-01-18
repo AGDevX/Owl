@@ -1,3 +1,3 @@
 export const initialState = {
-	...env
+	...env //-- made available via `new webpack.DefinePlugin({ env: JSON.stringify(env) })` in webpack.*.js
 };

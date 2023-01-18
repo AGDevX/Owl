@@ -1,7 +1,16 @@
+import { useAppConfig } from '../../services/useAppConfig';
 import './styles.css';
 
 const Home = () => {
-	return <div className="silver">Hi!!</div>;
+	const appConfig = useAppConfig();
+
+	return (
+		<>
+			<div className='silver'>
+				<pre>{JSON.stringify(appConfig, null, 2)}</pre>
+			</div>
+		</>
+	);
 };
 
 export default Home;
