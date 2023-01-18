@@ -14,7 +14,7 @@ const distPath = `./dist/${env.ENVIRONMENT.app}`;
 module.exports = merge(webpackConfig, {
 	mode: env.ENVIRONMENT.node,
 	stats: 'minimal',
-	devtool: 'eval-cheap-source-map',
+	devtool: 'source-map',
 	output: {
 		path: path.resolve(__dirname, distPath),
 		publicPath: env.HOST.publicPath
@@ -25,7 +25,7 @@ module.exports = merge(webpackConfig, {
 			base: env.HOST.publicPath,
 			template: `${srcPublicPath}/index.html`,
 			filename: './index.html',
-			title: env.appName
+			title: env.APP.name
 		}),
 		new FaviconsWebpackPlugin({
 			logo: `${srcPublicPath}/assets/logo.svg`,

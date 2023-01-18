@@ -10,6 +10,12 @@ module.exports = {
 		name: 'React Seed (local)'
 	},
 	APP_INITIAL_STATE: {
-		counter: 12
+		counter: 12,
+		albums: []
+	},
+	APIS: {
+		jsonPlaceholder: {
+			baseUrl: 'https://jsonplaceholder.typicode.com'
+		}
 	}
 };

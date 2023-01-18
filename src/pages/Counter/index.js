@@ -1,26 +1,17 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../../state/redux/slices/counterSlice';
+import { useCounterService } from '../../services/useCounterService';
+import './styles.css';
 
 const Counter = () => {
-	const count = useSelector((state) => state.counter.value);
-	const dispatch = useDispatch();
-
-	const handleIncrement = () => {
-		dispatch(increment());
-	};
-
-	const handleDecrement = () => {
-		dispatch(decrement());
-	};
+	const { count, decrementCounter, incrementCounter } = useCounterService();
 
 	return (
 		<div>
 			<div>
-				<button aria-label='Decrement value' onClick={handleDecrement}>
+				<button aria-label='Decrement value' onClick={decrementCounter}>
 					Decrement
 				</button>
-				<span>{count}</span>
-				<button aria-label='Increment value' onClick={handleIncrement}>
+				<span id='count'>{count}</span>
+				<button aria-label='Increment value' onClick={incrementCounter}>
 					Increment
 				</button>
 			</div>
