@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialState } from '../../initialState';
-import { get } from '../thunks/albumThunk';
+import { get, remove } from '../thunks/albumThunk';
 import { SliceStatus } from './sliceStatus';
 
 export const albumSlice = createSlice({
@@ -10,29 +10,37 @@ export const albumSlice = createSlice({
 		status: SliceStatus.Initial
 	},
 	reducers: {
-		removeSlice: (state, action) => {
-			debugger;
-			state.value = state.value.filter((a) => a.id !== action.payload);
-		}
+		//-- For if I wanted to call this directly (i.e. dispatch(removeSlice);) instead of using a Thunk and simply returning the payload
+		// removeSlice: (state, action) => {
+		// 	state.value = state.value.filter((a) => a.id !== action.payload);
+		// }
 	},
 	extraReducers: (builder) => {
 		builder
 			.addCase(get.pending, (state, action) => {
-				debugger;
 				state.status = SliceStatus.Loading;
 			})
 			.addCase(get.fulfilled, (state, action) => {
-				debugger;
 				state.status = SliceStatus.Loaded;
 				state.value = state.value.concat(action.payload);
 			})
 			.addCase(get.rejected, (state, action) => {
-				debugger;
+				state.status = SliceStatus.LoadFailed;
+			})
+			.addCase(remove.pending, (state, action) => {
+				state.status = SliceStatus.Loading;
+			})
+			.addCase(remove.fulfilled, (state, action) => {
+				state.status = SliceStatus.Loaded;
+				state.value = state.value.filter((a) => a.id !== action.payload);
+			})
+			.addCase(remove.rejected, (state, action) => {
 				state.status = SliceStatus.LoadFailed;
 			});
 	}
 });
 
-export const { removeSlice } = albumSlice.actions;
+//-- See comment above
+// export const { removeSlice } = albumSlice.actions;
 
 export default albumSlice.reducer;

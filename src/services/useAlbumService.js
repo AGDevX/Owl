@@ -6,7 +6,7 @@ export const useAlbumService = () => {
 	const albums = useSelector((state) => state.albums.value);
 
 	const getAlbums = async (id = null) => {
-		dispatch(get(id));
+		await dispatch(get(id));
 	};
 
 	const removeAlbum = (id) => {

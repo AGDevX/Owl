@@ -6,10 +6,10 @@ import './styles.css';
 
 const Home = () => {
 	const appConfig = useAppConfig();
-	const albumService = useAlbumService();
+	const { albums, getAlbums, removeAlbum } = useAlbumService();
 
 	useEffect(() => {
-		albumService.getAlbums();
+		getAlbums();
 	}, []);
 
 	return (
@@ -21,12 +21,12 @@ const Home = () => {
 			<div className='darkgray'>
 				<button
 					onClick={() => {
-						albumService.removeAlbum(albumService.albums[0]?.id);
+						removeAlbum(albums[0]?.id);
 					}}
 				>
 					Remove first album
 				</button>
-				<pre>{JSON.stringify(albumService.albums, null, 2)}</pre>
+				<pre>{JSON.stringify(albums, null, 2)}</pre>
 			</div>
 		</>
 	);
