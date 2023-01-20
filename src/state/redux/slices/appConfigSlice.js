@@ -9,6 +9,4 @@ export const appConfigSlice = createSlice({
 	reducers: {}
 });
 
-export const {} = appConfigSlice.actions;
-
 export default appConfigSlice.reducer;

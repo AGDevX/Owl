@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { initialState } from '../../initialState';
 import { get, remove } from '../thunks/albumThunk';
 import { SliceStatus } from './sliceStatus';
@@ -17,24 +18,24 @@ export const albumSlice = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder
-			.addCase(get.pending, (state, action) => {
+			.addCase(get.pending, (state) => {
 				state.status = SliceStatus.Loading;
 			})
 			.addCase(get.fulfilled, (state, action) => {
 				state.status = SliceStatus.Loaded;
 				state.value = state.value.concat(action.payload);
 			})
-			.addCase(get.rejected, (state, action) => {
+			.addCase(get.rejected, (state) => {
 				state.status = SliceStatus.LoadFailed;
 			})
-			.addCase(remove.pending, (state, action) => {
+			.addCase(remove.pending, (state) => {
 				state.status = SliceStatus.Loading;
 			})
 			.addCase(remove.fulfilled, (state, action) => {
 				state.status = SliceStatus.Loaded;
 				state.value = state.value.filter((a) => a.id !== action.payload);
 			})
-			.addCase(remove.rejected, (state, action) => {
+			.addCase(remove.rejected, (state) => {
 				state.status = SliceStatus.LoadFailed;
 			});
 	}
