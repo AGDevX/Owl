@@ -1,15 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useJsonPlaceholderApi } from '../apis/useJsonPlaceholderApi';
-import { add, remove } from '../state/redux/slices/albumSlice';
+import { get, remove } from '../state/redux/thunks/albumThunk';
 
 export const useAlbumService = () => {
 	const dispatch = useDispatch();
 	const albums = useSelector((state) => state.albums.value);
-	const jsonPlaceholderApi = useJsonPlaceholderApi();
 
 	const getAlbums = async (id = null) => {
-		const albums = await jsonPlaceholderApi.getAlbums(id);
-		dispatch(add(albums));
+		dispatch(get(id));
 	};
 
 	const removeAlbum = (id) => {
