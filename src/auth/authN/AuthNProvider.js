@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import AuthZeroProvider from './auth0/AuthZeroProvider';
+import AuthZeroProvider from './providers/auth0/AuthZeroProvider';
 import useAppConfig from '../../services/useAppConfig';
 
 const AuthNProvider = ({ children }) => {
@@ -8,9 +8,11 @@ const AuthNProvider = ({ children }) => {
 
 	const renderProvider = () => {
 		if (provider === 'auth0') {
-			return <AuthZeroProvider>{children}</AuthZeroProvider>;
+			const auth0Config = useAppConfig().AUTH_N.auth0;
+			return <AuthZeroProvider config={auth0Config}>{children}</AuthZeroProvider>;
 		} else {
-			return <AuthZeroProvider>{children}</AuthZeroProvider>;
+			const auth0Config = useAppConfig().AUTH_N.auth0;
+			return <AuthZeroProvider config={auth0Config}>{children}</AuthZeroProvider>;
 		}
 	};
 
