@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { get, remove } from '../state/redux/thunks/albumThunk';
 
-export const useAlbumService = () => {
+const useAlbumService = () => {
 	const dispatch = useDispatch();
 	const albums = useSelector((state) => state.albums.value);
 
@@ -22,3 +22,5 @@ export const useAlbumService = () => {
 		removeAlbum
 	};
 };
+
+export default useAlbumService;

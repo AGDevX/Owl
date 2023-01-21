@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux';
 
-export const useAppConfig = () => {
+const useAppConfig = () => {
 	const appConfig = useSelector((state) => state.appConfig);
 
 	return appConfig;
 };
+
+export default useAppConfig;

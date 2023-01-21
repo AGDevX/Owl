@@ -1,4 +1,4 @@
-import { useCounterService } from '../../services/useCounterService';
+import useCounterService from '../../services/useCounterService';
 import './styles.css';
 
 const Counter = () => {

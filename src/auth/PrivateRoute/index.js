@@ -1,7 +1,17 @@
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
+import useAuthN from '../authN/useAuthN';
+
 const PrivateRoute = () => {
-	console.log('private');
+	const { isAuthenticated, isInProgress, signIn } = useAuthN();
+
+	useEffect(() => {
+		if (!isAuthenticated && !isInProgress) {
+			signIn();
+		}
+	}, []);
+
 	return <Outlet />;
 };
 
