@@ -1,4 +1,4 @@
-export const RouteType = Object.freeze({
+const RouteType = Object.freeze({
 	PrivateRoute: Symbol('private-route'),
 	PublicRoute: Symbol('public-route'),
 	AuthCallback: Symbol('auth-callback'),
@@ -6,3 +6,5 @@ export const RouteType = Object.freeze({
 	Home: Symbol('home'),
 	NotFound: Symbol('not-found')
 });
+
+export default RouteType;

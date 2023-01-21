@@ -2,8 +2,8 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 
 import routes from './routes';
 
-import PrivateRoute from '../auth/PrivateRoute';
-import PublicRoute from '../auth/PublicRoute';
+import PrivateRoute from '../auth/authN/components/PrivateRoute';
+import PublicRoute from '../auth/authN/components/PublicRoute';
 
 import App from '../App';
 

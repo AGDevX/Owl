@@ -1,4 +1,4 @@
-import { RouteType } from './routeType';
+import RouteType from './routeType';
 import FooBar from '../pages/FooBar';
 import Foo from '../pages/Foobar/Foo';
 import Bar from '../pages/Foobar/Bar';

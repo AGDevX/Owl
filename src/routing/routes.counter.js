@@ -1,4 +1,4 @@
-import { RouteType } from './routeType';
+import RouteType from './routeType';
 import Counter from '../pages/Counter';
 
 const counterRoutes = [

@@ -1,4 +1,4 @@
-import { RouteType } from './routeType';
+import RouteType from './routeType';
 import NotFound from '../structure/NotFound';
 
 const structureRoutes = [

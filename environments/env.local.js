@@ -7,8 +7,7 @@ module.exports = {
 		publicPath: '/'
 	},
 	APP: {
-		name: 'React Seed (local)',
-		abbr: 'RS'
+		name: 'React Seed (local)'
 	},
 	APP_INITIAL_STATE: {
 		counter: 12,
@@ -31,10 +30,10 @@ module.exports = {
 	CLIENT_STORAGE: {
 		provider: 'localForage',
 		localForage: {
-			driver: 'IndexedDB',
-			name: `${this.APP.abbr}.${this.ENVIRONMENT.local}`,
+			driver: 'asyncStorage', //-- localforage.INDEXEDDB
+			name: 'RS.local',
 			version: 1.0,
-			storeName: `${this.APP.abbr}.${this.ENVIRONMENT.local}`,
+			storeName: 'RS.local',
 			description: 'Client-side storage'
 		}
 	}

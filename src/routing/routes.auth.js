@@ -1,5 +1,5 @@
-import { RouteType } from './routeType';
-import AuthCallback from '../auth/AuthCallback';
+import RouteType from './routeType';
+import AuthCallback from '../auth/authN/components/AuthCallback';
 
 const authRoutes = [
 	{

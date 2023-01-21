@@ -1,12 +1,9 @@
 import PropTypes from 'prop-types';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-import useAppConfig from '../../../services/useAppConfig';
+const AuthZeroProvider = ({ config, children }) => {
+	const { domain, clientId, signInRedirectUrl } = config;
 
-const AuthZeroProvider = ({ children }) => {
-	const { domain, clientId, signInRedirectUrl } = useAppConfig().AUTH_N.auth0;
-
-	debugger;
 	return (
 		<Auth0Provider
 			domain={domain}
@@ -21,6 +18,7 @@ const AuthZeroProvider = ({ children }) => {
 };
 
 AuthZeroProvider.propTypes = {
+	config: PropTypes.object.isRequired,
 	children: PropTypes.element.isRequired
 };
 

@@ -33,7 +33,8 @@
 		"eslint.run": "onType",
 		"explorer.fileNesting.enabled": true,
 		"explorer.fileNesting.patterns": {
-			"webpack.config.js": "webpack.*.js"
+			"webpack.config.js": "webpack.*.js",
+			"routes.js": "routes.*.js"
 		},
 		"files.autoGuessEncoding": true,
 		"files.exclude": {
