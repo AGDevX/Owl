@@ -16,7 +16,7 @@ module.exports = merge(webpackConfig, {
 	output: {
 		path: path.resolve(__dirname, distPath),
 		publicPath: env.HOST.baseHref,
-		filename: `[name].${env.ENVIRONMENT.app}.[contenthash].js`;
+		filename: `[name].${env.ENVIRONMENT.app}.js`
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
