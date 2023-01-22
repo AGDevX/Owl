@@ -1,5 +1,6 @@
 const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const srcPublicPath = './src/public';
@@ -9,17 +10,22 @@ module.exports = {
 	entry: {
 		app: './src/index.js'
 	},
-	output: {
-		clean: true
-	},
 	optimization: {
 		splitChunks: {
-			chunks: 'all',
-			maxSize: 200000
+			maxSize: 200000,
+			cacheGroups: {
+				commons: {
+					test: /node_modules/,
+					name: 'vendor',
+					chunks: 'initial'
+				}
+			}
 		}
 	},
+	stats: 'minimal',
 	plugins: [
 		new ESLintPlugin(),
+		new CleanWebpackPlugin(),
 		new CopyPlugin({
 			patterns: [
 				{ from: `${srcPublicPath}/assets`, to: 'assets' },
@@ -31,7 +37,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.m?js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: ['babel-loader']
 			},

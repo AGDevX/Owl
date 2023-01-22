@@ -7,7 +7,8 @@ module.exports = {
 		baseHref: '/'
 	},
 	APP: {
-		name: 'React Seed (local)'
+		name: 'React Seed (local)',
+		description: 'React starter app'
 	},
 	APP_INITIAL_STATE: {
 		counter: 12,

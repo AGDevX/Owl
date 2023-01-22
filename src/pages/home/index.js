@@ -22,11 +22,9 @@ const Home = () => {
 				<div>isAuthenticating: {JSON.stringify(isAuthenticating, null, 2)}</div>
 				<pre>account: {JSON.stringify(account, null, 2)}</pre>
 			</div>
-
 			<div className='silver'>
 				<pre>{JSON.stringify(appConfig, null, 2)}</pre>
 			</div>
-
 			<div className='darkgray'>
 				<button
 					onClick={() => {
