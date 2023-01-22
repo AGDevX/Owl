@@ -8,5 +8,17 @@
 	"background_color": "#0083d7",
 	"theme_color": "#0083d7",
 	"display": "standalone",
-	"display_override": ["minimal-ui"]
+	"display_override": ["minimal-ui"],
+	"icons": [
+		{
+			"src": "assets/favicon.ico",
+			"type": "image/x-icon",
+			"purpose": "any"
+		},
+		{
+			"src": "assets/logo.svg",
+			"type": "image/svg+xml",
+			"purpose": "any"
+		}
+	]
 }

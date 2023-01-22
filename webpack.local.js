@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const webpackConfig = require('./webpack.config');
 const env = require('./environments/env.local');
@@ -17,48 +15,24 @@ module.exports = merge(webpackConfig, {
 	devtool: 'source-map',
 	output: {
 		path: path.resolve(__dirname, distPath),
-		publicPath: env.HOST.publicPath
+		publicPath: env.HOST.baseHref,
+		filename: `[name].${env.ENVIRONMENT.app}.[contenthash].js`;
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: 'body',
-			base: env.HOST.publicPath,
+			base: env.HOST.baseHref,
 			template: `${srcPublicPath}/index.html`,
 			filename: './index.html',
 			title: env.APP.name
 		}),
-		new FaviconsWebpackPlugin({
-			logo: `${srcPublicPath}/assets/logo.svg`,
-			cache: true,
-			inject: true,
-			manifest: `${srcPublicPath}/manifest.webmanifest`,
-			favicons: {
-				appName: env.APP.name,
-				icons: {
-					android: true,
-					appleIcon: true,
-					appleStartup: true,
-					favicons: true,
-					windows: true,
-					yandex: true
-				}
-			}
-		}),
-		new FileManagerPlugin({
-			events: {
-				onEnd: {
-					copy: [{ source: `${srcPublicPath}/robots.txt`, destination: `${distPath}/robots.txt` }],
-					move: [{ source: `${distPath}/assets/manifest.webmanifest`, destination: `${distPath}/manifest.webmanifest` }]
-				}
-			}
-		}),
-		new webpack.DefinePlugin({ env: JSON.stringify(env) }) //-- stringify to avoid parsing issues (e.g. {"ENVIRONMENT":{"app":local,"node":development},"HOST":{"publicPath":/},"APP":{"name":React Seed (local)},"APP_STATE":{"counter":7}} )
+		new webpack.DefinePlugin({ env: JSON.stringify(env) }) //-- stringify to avoid parsing issues (e.g. {"ENVIRONMENT":{"app":local,"node":development},"HOST":{"baseHref":/},"APP":{"name":React Seed (local)},"APP_STATE":{"counter":7}} )
 	],
 	devServer: {
-		historyApiFallback: true,
-		open: true,
 		static: {
-			publicPath: env.HOST.publicPath
-		}
+			directory: path.join(__dirname, srcPublicPath)
+		},
+		historyApiFallback: true,
+		open: true
 	}
 });

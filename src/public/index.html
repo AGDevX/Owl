@@ -6,10 +6,16 @@
 		<meta http-equiv="x-ua-xompatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+		<link href="/assets/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+		<link href="/manifest.webmanifest" rel="manifest" />
+
 		<title><%= htmlWebpackPlugin.options.title %></title>
 	</head>
-	<body>
-		<noscript><%= htmlWebpackPlugin.options.title %> would be pretty boring without JavaScript. Please enable it!</noscript>
+	<body style="margin: unset">
+		<noscript
+			><%= htmlWebpackPlugin.options.title %> would be pretty boring without JavaScript. Please enable
+			it!</noscript
+		>
 		<div id="app"></div>
 	</body>
 </html>

@@ -4,7 +4,7 @@ module.exports = {
 		node: 'development'
 	},
 	HOST: {
-		publicPath: '/'
+		baseHref: '/'
 	},
 	APP: {
 		name: 'React Seed (local)'

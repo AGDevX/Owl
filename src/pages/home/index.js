@@ -21,7 +21,6 @@ const Home = () => {
 				<div>isAuthenticated: {JSON.stringify(isAuthenticated, null, 2)}</div>
 				<div>isAuthenticating: {JSON.stringify(isAuthenticating, null, 2)}</div>
 				<pre>account: {JSON.stringify(account, null, 2)}</pre>
-				<pre>{JSON.stringify(albums, null, 2)}</pre>
 			</div>
 
 			<div className='silver'>
