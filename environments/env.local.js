@@ -25,8 +25,8 @@ module.exports = {
 		auth0: {
 			domain: 'agdevx.auth0.com',
 			clientId: 'xIWLicq70VulQHYmihep3KYRO8pTAISC',
-			signInRedirectUrl: 'http://localhost:8080/auth-callback',
-			signOutRedirectUrl: 'http://localhost:8080'
+			signInRedirectUrl: 'https://localhost:8080/auth-callback',
+			signOutRedirectUrl: 'https://localhost:8080'
 		}
 	},
 	CLIENT_STORAGE: {
