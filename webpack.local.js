@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fs = require('fs');
 
 const webpackConfig = require('./webpack.config');
 const env = require('./environments/env.local');
@@ -62,6 +63,10 @@ module.exports = merge(webpackConfig, {
 	devServer: {
 		static: {
 			directory: path.join(__dirname, srcPublicPath)
+		},
+		https: {
+			key: fs.readFileSync('./localSsl/key.pem'),
+			cert: fs.readFileSync('./localSsl/cert.pem')
 		},
 		historyApiFallback: true,
 		open: true

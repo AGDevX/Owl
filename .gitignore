@@ -121,3 +121,6 @@ dist
 # Documentation here: https://yarnpkg.com/features/zero-installs
 !.yarn/cache
 #.pnp.*
+
+# SSL Certs
+*.pem

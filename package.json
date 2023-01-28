@@ -17,7 +17,7 @@
 		"yarn": ">=3"
 	},
 	"scripts": {
-		"lint": "eslint -c .eslintrc",
+		"createLocalSsl": "node ./localSsl/createLocalSsl.js win",
 		"build": "webpack --config webpack.local.js",
 		"watch": "webpack serve --config webpack.local.js"
 	},
