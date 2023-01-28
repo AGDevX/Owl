@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 
+import { registerServiceWorker } from './public/swRegistration';
 import browserRouter from './routing/browserRouter';
 
 const rootElement = document.getElementById('app');
@@ -12,3 +13,5 @@ root.render(
 		<RouterProvider router={browserRouter} />
 	</React.StrictMode>
 );
+
+registerServiceWorker();

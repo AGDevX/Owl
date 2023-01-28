@@ -85,7 +85,7 @@
 		"prettier.semi": true,
 		"prettier.singleAttributePerLine": false,
 		"prettier.singleQuote": true,
-		"prettier.tabWidth": 4,
+		"prettier.tabWidth": 2,
 		"prettier.trailingComma": "none",
 		"prettier.useEditorConfig": false,
 		"prettier.useTabs": true,

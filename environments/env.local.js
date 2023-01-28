@@ -8,7 +8,8 @@ module.exports = {
 	},
 	APP: {
 		name: 'React Seed (local)',
-		description: 'React starter app'
+		description: 'React starter app',
+		enableServiceWorker: true
 	},
 	APP_INITIAL_STATE: {
 		counter: 12,

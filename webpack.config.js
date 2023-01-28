@@ -2,6 +2,7 @@ const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 const srcPublicPath = './src/public';
 
@@ -23,6 +24,11 @@ module.exports = {
 		}
 	},
 	stats: 'minimal',
+	ignoreWarnings: [
+		{
+			message: /InjectManifest has been called multiple times/i
+		}
+	],
 	plugins: [
 		new ESLintPlugin(),
 		new CleanWebpackPlugin(),
@@ -32,6 +38,9 @@ module.exports = {
 				{ from: `${srcPublicPath}/manifest.webmanifest`, to: '' },
 				{ from: `${srcPublicPath}/robots.txt`, to: '' }
 			]
+		}),
+		new InjectManifest({
+			swSrc: `${srcPublicPath}/sw.js`
 		})
 	],
 	module: {
