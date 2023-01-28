@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["css-loader", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:6.7.3"],\
             ["eslint", "npm:8.32.0"],\
             ["eslint-plugin-react", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:7.32.1"],\
+            ["globals", "npm:13.20.0"],\
             ["html-webpack-plugin", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:5.5.0"],\
             ["localforage", "npm:1.10.0"],\
             ["prop-types", "npm:15.8.1"],\
@@ -8318,6 +8319,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["css-loader", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:6.7.3"],\
             ["eslint", "npm:8.32.0"],\
             ["eslint-plugin-react", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:7.32.1"],\
+            ["globals", "npm:13.20.0"],\
             ["html-webpack-plugin", "virtual:fb87f47f0b15b4ca68d5c3b2ef8388d83bc79221708ae3f4e38d7e7278423e40e6a0a9f669a5d385575f12b42951288a268c2872715ace33e486323c58318cc4#npm:5.5.0"],\
             ["localforage", "npm:1.10.0"],\
             ["prop-types", "npm:15.8.1"],\

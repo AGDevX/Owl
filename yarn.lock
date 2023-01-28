@@ -4100,7 +4100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^13.19.0":
+"globals@npm:^13.19.0, globals@npm:^13.20.0":
   version: 13.20.0
   resolution: "globals@npm:13.20.0"
   dependencies:
@@ -6226,6 +6226,7 @@ __metadata:
     css-loader: ^6.7.3
     eslint: ^8.32.0
     eslint-plugin-react: ^7.32.1
+    globals: ^13.20.0
     html-webpack-plugin: ^5.5.0
     localforage: ^1.10.0
     prop-types: ^15.8.1
