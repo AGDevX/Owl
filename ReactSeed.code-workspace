@@ -9,7 +9,8 @@
 		"editor.insertSpaces": false,
 		"editor.suggest.insertMode": "replace",
 		"editor.tabSize": 2,
-		"eslint.alwaysShowStatus": true,
+		"eslint.experimental.useFlatConfig": false,
+		"eslint.nodePath": ".yarn/sdks",
 		"eslint.packageManager": "yarn",
 		"explorer.fileNesting.enabled": true,
 		"explorer.fileNesting.patterns": {
