@@ -17,7 +17,7 @@ const useLocalForage = (config) => {
 
 	const set = async (key, value) => {
 		try {
-			//-- localForage having trouble serializing objects, so we'll do it
+			//-- localForage is having trouble serializing objects, so we'll do it
 			value = JSON.stringify(value);
 			await store.setItem(key, value);
 		} catch (err) {
