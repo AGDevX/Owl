@@ -37,7 +37,8 @@ module.exports = [
 			}
 		},
 		rules: {
-			'no-debugger': 'warn'
+			'no-debugger': 'warn',
+			'no-unused-vars': 'error'
 		}
 	}
 ];
