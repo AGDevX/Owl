@@ -1,11 +1,8 @@
+//-- This new config works with ES Lint, but it doesn't integrate well with the ES Lint extension yet
+//--	Don't use this until it matures. Keep as reference.
+
 //-- https://eslint.org/docs/latest/use/configure/configuration-files-new
 //-- https://eslint.org/blog/2022/08/new-config-system-part-2/
-
-//-- ESLint and Yarn 2 aren't compatible with each other out of the box in VS Code
-//-- https://stackoverflow.com/questions/59707128/eslint-is-working-from-terminal-but-not-showing-error-in-the-editor-ui-vscode
-//-- 	1) https://next.yarnpkg.com/advanced/pnpify#vscode-support
-//-- 	2) https://next.yarnpkg.com/getting-started/editor-sdks
-//-- https://github.com/microsoft/vscode-eslint/issues/601
 
 const globals = require('globals');
 const babelParser = require('@babel/eslint-parser');

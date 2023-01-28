@@ -3,8 +3,6 @@ import './styles.css';
 
 const Counter = () => {
 	const { count, decrementCounter, incrementCounter } = useCounterService();
-	debugger;
-	const asdf = 'asf';
 	return (
 		<div>
 			<div>

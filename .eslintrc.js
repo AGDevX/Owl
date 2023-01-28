@@ -1,3 +1,9 @@
+//-- ESLint and Yarn 2 aren't compatible with each other out of the box in VS Code
+//-- https://stackoverflow.com/questions/59707128/eslint-is-working-from-terminal-but-not-showing-error-in-the-editor-ui-vscode
+//-- 	1) https://next.yarnpkg.com/getting-started/editor-sdks
+//-- 	2) https://next.yarnpkg.com/advanced/pnpify#vscode-support (not needed)
+//-- https://github.com/microsoft/vscode-eslint/issues/601
+
 module.exports = {
 	root: true,
 	env: {

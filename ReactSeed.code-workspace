@@ -56,6 +56,10 @@
 		"prettier.useTabs": true,
 		"prettier.vueIndentScriptAndStyle": false,
 		"prettier.withNodeModules": false,
+		"search.exclude": {
+			"**/.yarn": true,
+			"**/.pnp.*": true
+		},
 		"search.showLineNumbers": true
 	}
 }
