@@ -3,7 +3,7 @@ import './styles.css';
 
 const Counter = () => {
 	const { count, decrementCounter, incrementCounter } = useCounterService();
-
+	debugger;
 	return (
 		<div>
 			<div>

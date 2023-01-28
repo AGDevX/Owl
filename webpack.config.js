@@ -1,5 +1,3 @@
-const path = require('path');
-const ESLintPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
@@ -30,7 +28,6 @@ module.exports = {
 		}
 	],
 	plugins: [
-		new ESLintPlugin(),
 		new CleanWebpackPlugin(),
 		new CopyPlugin({
 			patterns: [
