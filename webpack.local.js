@@ -64,9 +64,12 @@ module.exports = merge(webpackConfig, {
 		static: {
 			directory: path.join(__dirname, srcPublicPath)
 		},
-		https: {
-			key: fs.readFileSync('./localSsl/key.pem'),
-			cert: fs.readFileSync('./localSsl/cert.pem')
+		server: {
+			type: 'https',
+			options: {
+				key: fs.readFileSync('./localSsl/key.pem'),
+				cert: fs.readFileSync('./localSsl/cert.pem')
+			}
 		},
 		historyApiFallback: true,
 		open: true
