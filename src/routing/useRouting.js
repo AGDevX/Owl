@@ -1,5 +1,6 @@
 import { matchRoutes, useLocation } from 'react-router-dom';
 import { allRoutes } from './routes';
+import RouteType from './routeType';
 
 const useRouting = () => {
 	const getCurrentRoute = () => {
@@ -8,8 +9,14 @@ const useRouting = () => {
 		return route;
 	};
 
+	const getHomeRoute = () => {
+		const route = allRoutes.find((r) => r.type === RouteType.Home);
+		return route;
+	};
+
 	return {
-		getCurrentRoute
+		getCurrentRoute,
+		getHomeRoute
 	};
 };
 

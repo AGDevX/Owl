@@ -8,7 +8,7 @@ export default [
 		enabled: true,
 		private: true,
 		type: RouteType.Content,
-		path: 'counter',
+		path: '/counter',
 		element: <Counter />,
 		children: []
 	}

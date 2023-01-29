@@ -1,6 +1,8 @@
 const RouteType = Object.freeze({
 	PrivateRoute: Symbol('private-route'),
 	PublicRoute: Symbol('public-route'),
+	SignIn: Symbol('sign-in'),
+	SignOut: Symbol('sign-out'),
 	AuthCallback: Symbol('auth-callback'),
 	Content: Symbol('content'),
 	Home: Symbol('home'),

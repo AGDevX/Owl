@@ -2,14 +2,14 @@ import PropTypes from 'prop-types';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const useAuthZero = ({ signOutRedirectUrl }) => {
-	const { user, isAuthenticated, isLoading, loginWithRedirect, logOut } = useAuth0();
+	const { user, isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0();
 
 	return {
 		account: user,
 		isAuthenticated,
 		isAuthenticating: isLoading,
 		signIn: () => loginWithRedirect(),
-		signOut: () => logOut({ returnTo: signOutRedirectUrl })
+		signOut: () => logout({ returnTo: signOutRedirectUrl })
 	};
 };
 

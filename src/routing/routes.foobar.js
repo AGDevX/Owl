@@ -10,7 +10,7 @@ export default [
 		enabled: true,
 		private: false,
 		type: RouteType.Content,
-		path: 'foobar',
+		path: '/foobar',
 		element: <FooBar />,
 		children: [
 			{

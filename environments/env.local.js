@@ -10,7 +10,8 @@ module.exports = {
 		name: 'React Seed (local)',
 		description: 'React starter app',
 		showReactRouterDomErrorPage: true,
-		enableServiceWorker: true
+		enableServiceWorker: true,
+		autoSignIn: true
 	},
 	APP_INITIAL_STATE: {
 		counter: 12,
@@ -26,8 +27,8 @@ module.exports = {
 		auth0: {
 			domain: 'agdevx.auth0.com',
 			clientId: 'xIWLicq70VulQHYmihep3KYRO8pTAISC',
-			signInRedirectUrl: 'https://localhost:8080/auth-callback',
-			signOutRedirectUrl: 'https://localhost:8080'
+			signInRedirectUrl: 'https://localhost:8080/auth-callback?auth-type=sign-in',
+			signOutRedirectUrl: 'https://localhost:8080/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
 		}
 	},
 	CLIENT_STORAGE: {

@@ -8,7 +8,7 @@ export default [
 		enabled: true,
 		private: false,
 		type: RouteType.Home,
-		path: '',
+		path: '/',
 		element: <Home />,
 		children: [],
 		loader: () => {
@@ -22,7 +22,7 @@ export default [
 		enabled: true,
 		private: true,
 		type: RouteType.Home,
-		path: 'home',
+		path: '/home',
 		element: <Home />,
 		children: []
 	}

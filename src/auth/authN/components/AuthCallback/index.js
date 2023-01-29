@@ -1,15 +1,18 @@
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useSearchParams } from 'react-router-dom';
 
-import { useClientStorage, StorageKey } from '../../../../libs/clientStorage/useClientStorage';
+import useAuthNService from '../../useAuthNService';
+import AuthType from '../../authType';
 
 const AuthCallback = () => {
 	const [returnRoute, setReturnRoute] = useState(null);
-
-	const { get } = useClientStorage();
+	const [search] = useSearchParams();
+	const { getAuthReturnRoute } = useAuthNService();
 
 	const getAuthNReturnRoute = async () => {
-		const route = await get(StorageKey.AuthNReturnRoute);
+		const authTypeQueryParam = search.get('auth-type');
+		const isSignOut = authTypeQueryParam === AuthType.SignOut ?? false;
+		const route = await getAuthReturnRoute(isSignOut);
 		setReturnRoute(route);
 	};
 
