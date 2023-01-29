@@ -17,7 +17,7 @@ export default [
 				id: 'foo',
 				name: 'Foo',
 				enabled: true,
-				private: false,
+				private: true,
 				type: RouteType.Content,
 				path: 'foo',
 				element: <Foo />,
