@@ -4,6 +4,9 @@
 //-- 	2) https://next.yarnpkg.com/advanced/pnpify#vscode-support (not needed)
 //-- https://github.com/microsoft/vscode-eslint/issues/601
 
+const eslintLocal = require('./eslint.local');
+const eslintLocalRules = eslintLocal[eslintLocal.length - 1].rules;
+
 module.exports = {
 	root: true,
 	env: {
@@ -26,6 +29,6 @@ module.exports = {
 		}
 	},
 	rules: {
-		'no-debugger': 'warn'
+		...eslintLocalRules
 	}
 };

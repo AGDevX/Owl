@@ -14,8 +14,9 @@
 		"eslint.packageManager": "yarn",
 		"explorer.fileNesting.enabled": true,
 		"explorer.fileNesting.patterns": {
-			"webpack.config.js": "webpack.*.js",
-			"routes.js": "routes.*.js"
+			"eslint.config.js": "eslint.*.js",
+			"routes.js": "routes.*.js",
+			"webpack.config.js": "webpack.*.js"
 		},
 		"files.autoGuessEncoding": true,
 		"files.exclude": {

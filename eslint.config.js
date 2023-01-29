@@ -38,10 +38,6 @@ module.exports = [
 			react: {
 				version: 'detect'
 			}
-		},
-		rules: {
-			'no-debugger': 'warn',
-			'no-unused-vars': 'error'
 		}
 	}
 ];
