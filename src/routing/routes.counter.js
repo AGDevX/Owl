@@ -1,16 +1,15 @@
 import RouteType from './routeType';
 import Counter from '../pages/Counter';
 
-const counterRoutes = [
+export default [
 	{
 		id: 'counter',
+		name: 'Counter',
 		enabled: true,
 		private: true,
 		type: RouteType.Content,
-		path: '/counter',
+		path: 'counter',
 		element: <Counter />,
 		children: []
 	}
 ];
-
-export default counterRoutes;

@@ -1,31 +1,27 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
-import routes from './routes';
-
+import { publicRoutes, privateRoutes } from './routes';
 import PrivateRoute from '../auth/authN/components/PrivateRoute';
 import PublicRoute from '../auth/authN/components/PublicRoute';
-
 import App from '../App';
 
-const browserRouter = createBrowserRouter(
+const renderRoutes = (routes) => {
+	return routes.map((route) =>
+		route.children && route.children.length ? (
+			<Route key={route.id} path={route.path} element={route.element}>
+				{renderRoutes(route.children)}
+			</Route>
+		) : (
+			<Route key={route.id} path={route.path} element={route.element} />
+		)
+	);
+};
+
+export default createBrowserRouter(
 	createRoutesFromElements(
 		<Route element={<App />}>
-			<Route element={<PublicRoute />}>
-				{routes
-					.filter((r) => r.enabled && !r.private)
-					.map((r) => {
-						return <Route key={r.id} path={r.path} element={r.element} />;
-					})}
-			</Route>
-			<Route element={<PrivateRoute />}>
-				{routes
-					.filter((r) => r.enabled && r.private)
-					.map((r) => {
-						return <Route key={r.id} path={r.path} element={r.element} />;
-					})}
-			</Route>
+			<Route element={<PublicRoute />}>{renderRoutes(publicRoutes)}</Route>
+			<Route element={<PrivateRoute />}>{renderRoutes(privateRoutes)}</Route>
 		</Route>
 	)
 );
-
-export default browserRouter;

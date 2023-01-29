@@ -4,6 +4,6 @@ import fooBarRoutes from './routes.fooBar';
 import counterRoutes from './routes.counter';
 import structureRoutes from './routes.structure';
 
-const routes = [...authRoutes, ...homeRoutes, ...counterRoutes, ...fooBarRoutes, ...structureRoutes];
-
-export default routes;
+export const allRoutes = [...authRoutes, ...homeRoutes, ...counterRoutes, ...fooBarRoutes, ...structureRoutes];
+export const publicRoutes = allRoutes.filter((r) => !r.private);
+export const privateRoutes = allRoutes.filter((r) => r.private);

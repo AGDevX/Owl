@@ -1,16 +1,15 @@
 import RouteType from './routeType';
 import NotFound from '../structure/NotFound';
 
-const structureRoutes = [
+export default [
 	{
 		id: 'not-found',
+		name: 'Not Found',
 		enabled: true,
+		private: false,
+		type: RouteType.NotFound,
 		path: '*',
 		element: <NotFound />,
-		children: [],
-		private: false,
-		type: RouteType.NotFound
+		children: []
 	}
 ];
-
-export default structureRoutes;

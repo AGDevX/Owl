@@ -3,17 +3,19 @@ import FooBar from '../pages/FooBar';
 import Foo from '../pages/Foobar/Foo';
 import Bar from '../pages/Foobar/Bar';
 
-const fooBarRoutes = [
+export default [
 	{
 		id: 'foo-bar',
+		name: 'FooBar',
 		enabled: true,
-		private: true,
+		private: false,
 		type: RouteType.Content,
 		path: 'foobar',
 		element: <FooBar />,
 		children: [
 			{
 				id: 'foo',
+				name: 'Foo',
 				enabled: true,
 				private: false,
 				type: RouteType.Content,
@@ -22,6 +24,7 @@ const fooBarRoutes = [
 				children: [
 					{
 						id: 'bar',
+						name: 'Bar',
 						enabled: true,
 						private: false,
 						type: RouteType.Content,
@@ -34,5 +37,3 @@ const fooBarRoutes = [
 		]
 	}
 ];
-
-export default fooBarRoutes;
