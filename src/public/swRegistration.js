@@ -1,17 +1,21 @@
 const enableServiceWorker = env.APP.enableServiceWorker;
 
 export const registerServiceWorker = async () => {
-	if (enableServiceWorker && 'serviceWorker' in navigator) {
-		try {
-			const registration = await navigator.serviceWorker.register('/sw.js', {
-				type: 'module'
-			});
-			console.debug(registration);
-		} catch (err) {
-			console.debug(`There was an error registering service worker: ${err.message}`);
+	if (enableServiceWorker) {
+		if ('serviceWorker' in navigator) {
+			try {
+				const registration = await navigator.serviceWorker.register('/sw.js', {
+					type: 'module'
+				});
+				console.debug(registration);
+			} catch (err) {
+				console.debug(`There was an error registering service worker: ${err.message}`);
+			}
+		} else {
+			console.debug('Service workers are not supported by this browser');
 		}
 	} else {
-		console.debug('Service workers are not supported by this browser');
+		console.debug('Service worker disabled');
 	}
 };
 
