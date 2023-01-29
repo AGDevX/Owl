@@ -9,6 +9,7 @@ module.exports = {
 	APP: {
 		name: 'React Seed (local)',
 		description: 'React starter app',
+		showReactRouterDomErrorPage: true,
 		enableServiceWorker: true
 	},
 	APP_INITIAL_STATE: {

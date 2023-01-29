@@ -10,7 +10,11 @@ export default [
 		type: RouteType.Home,
 		path: '',
 		element: <Home />,
-		children: []
+		children: [],
+		loader: () => {
+			console.log('loader called');
+			return null;
+		}
 	},
 	{
 		id: 'home-2',
