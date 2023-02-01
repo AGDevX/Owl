@@ -15,6 +15,8 @@ const useRouting = () => {
 	};
 
 	return {
+		allRoutes,
+		RouteType,
 		getCurrentRoute,
 		getHomeRoute
 	};

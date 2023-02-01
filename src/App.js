@@ -1,4 +1,5 @@
 import { Provider } from 'react-redux';
+import { Outlet } from 'react-router-dom';
 
 import store from './state/redux/store';
 import AuthNProvider from './auth/authN/AuthNProvider';
@@ -8,7 +9,9 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<AuthNProvider>
-				<Layout />
+				<Layout>
+					<Outlet />
+				</Layout>
 			</AuthNProvider>
 		</Provider>
 	);
