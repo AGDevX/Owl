@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import useRouting from '../routing/useRouting';
@@ -9,12 +10,10 @@ const NavBar = () => {
 		<>
 			{allRoutes.map((r, index) => {
 				return (
-					<>
-						<Link key={r.id} to={r.path}>
-							{r.name}
-						</Link>
+					<React.Fragment key={r.id}>
+						<Link to={r.path}>{r.name}</Link>
 						{index !== allRoutes.length - 1 && <> | </>}
-					</>
+					</React.Fragment>
 				);
 			})}
 		</>
