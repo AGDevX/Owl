@@ -2,6 +2,7 @@ import RouteType from './routeType';
 import SignIn from '../auth/authN/components/SignIn';
 import SignOut from '../auth/authN/components/SignOut';
 import AuthCallback from '../auth/authN/components/AuthCallback';
+import ConsentRequired from '../auth/authN/components/ConsentRequired';
 
 export default [
 	{
@@ -52,6 +53,16 @@ export default [
 		type: RouteType.AuthCallback,
 		path: '/auth-callback',
 		element: <AuthCallback />,
+		children: []
+	},
+	{
+		id: 'consent-required',
+		name: 'Consent Required',
+		enabled: true,
+		private: true,
+		type: RouteType.ConsentRequired,
+		path: '/consent-required',
+		element: <ConsentRequired />,
 		children: []
 	}
 ];

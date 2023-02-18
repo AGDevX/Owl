@@ -18,12 +18,18 @@ module.exports = {
 		albums: []
 	},
 	APIS: {
+		spider: {
+			baseUrl: 'https://localhost:7264',
+			audience: 'api://agdevx/spider-web-api/dev',
+			scopes: ['api:access']
+		},
 		jsonPlaceholder: {
 			baseUrl: 'https://jsonplaceholder.typicode.com'
 		}
 	},
 	AUTH_N: {
 		provider: 'auth0',
+		oidcScopes: ['openid', 'profile', 'email', 'offline_access'],
 		auth0: {
 			domain: 'agdevx.auth0.com',
 			clientId: 'xIWLicq70VulQHYmihep3KYRO8pTAISC',

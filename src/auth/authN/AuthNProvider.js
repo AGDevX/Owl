@@ -4,15 +4,21 @@ import AuthZeroProvider from './providers/auth0/AuthZeroProvider';
 import useAppConfig from '../../services/useAppConfig';
 
 const AuthNProvider = ({ children }) => {
-	const { provider } = useAppConfig().AUTH_N;
+	const { provider, oidcScopes, auth0 } = useAppConfig().AUTH_N;
 
 	const renderProvider = () => {
 		if (provider === 'auth0') {
-			const auth0Config = useAppConfig().AUTH_N.auth0;
-			return <AuthZeroProvider config={auth0Config}>{children}</AuthZeroProvider>;
+			return (
+				<AuthZeroProvider oidcScopes={oidcScopes} auth0Config={auth0}>
+					{children}
+				</AuthZeroProvider>
+			);
 		} else {
-			const auth0Config = useAppConfig().AUTH_N.auth0;
-			return <AuthZeroProvider config={auth0Config}>{children}</AuthZeroProvider>;
+			return (
+				<AuthZeroProvider oidcScopes={oidcScopes} auth0Config={auth0}>
+					{children}
+				</AuthZeroProvider>
+			);
 		}
 	};
 

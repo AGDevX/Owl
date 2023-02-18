@@ -2,14 +2,12 @@ import useAuthZero from './providers/auth0/useAuthZero';
 import useAppConfig from '../../services/useAppConfig';
 
 const useAuthN = () => {
-	const { provider } = useAppConfig().AUTH_N;
+	const authNConfig = useAppConfig().AUTH_N;
 
-	if (provider === 'auth0') {
-		const auth0Config = useAppConfig().AUTH_N.auth0;
-		return useAuthZero(auth0Config);
+	if (authNConfig.provider === 'auth0') {
+		return useAuthZero(authNConfig);
 	} else {
-		const auth0Config = useAppConfig().AUTH_N.auth0;
-		return useAuthZero(auth0Config);
+		return useAuthZero(authNConfig);
 	}
 };
 

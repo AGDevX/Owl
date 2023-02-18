@@ -23,7 +23,7 @@ export const albumSlice = createSlice({
 			})
 			.addCase(get.fulfilled, (state, action) => {
 				state.status = SliceStatus.Loaded;
-				state.value = state.value.concat(action.payload);
+				state.value = state.value.concat(action.payload.data);
 			})
 			.addCase(get.rejected, (state) => {
 				state.status = SliceStatus.LoadFailed;

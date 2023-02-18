@@ -1,10 +1,12 @@
-import { matchRoutes, useLocation } from 'react-router-dom';
+import { matchRoutes, useLocation, useNavigate } from 'react-router-dom';
 import { allRoutes } from './routes';
 import RouteType from './routeType';
 
 const useRouting = () => {
+	const location = useLocation();
+	const navigate = useNavigate();
+
 	const getCurrentRoute = () => {
-		const location = useLocation();
 		const { route } = matchRoutes(allRoutes, location).find((m) => m.pathname === location.pathname);
 		return route;
 	};
@@ -14,11 +16,17 @@ const useRouting = () => {
 		return route;
 	};
 
+	const navigateToConsentRequiredRoute = (requiredScopes) => {
+		const route = allRoutes.find((r) => r.type === RouteType.ConsentRequired);
+		navigate(route.path, { state: { requiredScopes } });
+	};
+
 	return {
 		allRoutes,
 		RouteType,
 		getCurrentRoute,
-		getHomeRoute
+		getHomeRoute,
+		navigateToConsentRequiredRoute
 	};
 };
 

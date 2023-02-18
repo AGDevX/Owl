@@ -1,7 +1,7 @@
 //-- Excellent gif! -- https://redux.js.org/tutorials/essentials/part-5-async-logic#thunks-and-async-logic
 //-- https://redux.js.org/usage/writing-logic-thunks#using-createasyncthunk
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getAlbums } from '../../../apis/jsonPlaceholderApi';
+import { getAlbums } from '../../../apis/json-placeholder-api';
 
 export const get = createAsyncThunk('album/get', async (albumId) => {
 	const albums = await getAlbums(albumId);

@@ -1,8 +1,10 @@
+import { getUserInfo } from '../../apis/spider-api';
 import useCounterService from '../../services/useCounterService';
 import './styles.css';
 
 const Counter = () => {
 	const { count, decrementCounter, incrementCounter } = useCounterService();
+	getUserInfo();
 	return (
 		<div>
 			<div>

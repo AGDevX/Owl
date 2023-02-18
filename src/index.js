@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 
@@ -9,9 +9,9 @@ const rootElement = document.getElementById('app');
 const root = createRoot(rootElement);
 root.render(
 	//-- https://stackoverflow.com/questions/48846289/why-is-my-react-component-is-rendering-twice
-	<React.StrictMode>
-		<RouterProvider router={browserRouter} />
-	</React.StrictMode>
+	// <React.StrictMode>
+	<RouterProvider router={browserRouter} />
+	// </React.StrictMode>
 );
 
 registerServiceWorker();

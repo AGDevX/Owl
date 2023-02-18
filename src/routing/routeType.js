@@ -4,6 +4,7 @@ const RouteType = Object.freeze({
 	SignIn: Symbol('sign-in'),
 	SignOut: Symbol('sign-out'),
 	AuthCallback: Symbol('auth-callback'),
+	ConsentRequired: Symbol('consent-required'),
 	Content: Symbol('content'),
 	Home: Symbol('home'),
 	NotFound: Symbol('not-found')
