@@ -4,7 +4,7 @@ import './styles.css';
 
 const Counter = () => {
 	const { count, decrementCounter, incrementCounter } = useCounterService();
-	getUserInfo();
+	getUserInfo('agdevx@gmail.com');
 	return (
 		<div>
 			<div>
