@@ -1,10 +1,19 @@
-import { getUserInfo } from '../../apis/spider-api';
+import { useEffect } from 'react';
 import useCounterService from '../../services/useCounterService';
+import useUserService from '../../services/userUserService';
 import './styles.css';
 
 const Counter = () => {
 	const { count, decrementCounter, incrementCounter } = useCounterService();
-	getUserInfo('agdevx@gmail.com');
+	const { getUserInfo } = useUserService();
+
+	useEffect(() => {
+		const get = async (email) => {
+			var info = await getUserInfo(email);
+			return info;
+		};
+		get('agdevx@gmail.com');
+	}, []);
 	return (
 		<div>
 			<div>
