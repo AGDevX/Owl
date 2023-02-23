@@ -1,7 +1,7 @@
 {
 	"id": "agdevx.owl",
-	"name": "React Owl",
-	"short_name": "React Owl",
+	"name": "Owl",
+	"short_name": "Owl",
 	"description": "React starter application",
 	"start_url": ".",
 	"orientation": "any",
