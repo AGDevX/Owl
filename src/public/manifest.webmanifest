@@ -1,8 +1,8 @@
 {
-	"id": "agdevx.reactseed",
-	"name": "React Seed",
-	"short_name": "React Seed",
-	"description": "React application template",
+	"id": "agdevx.owl",
+	"name": "React Owl",
+	"short_name": "React Owl",
+	"description": "React starter application",
 	"start_url": ".",
 	"orientation": "any",
 	"background_color": "#0083d7",

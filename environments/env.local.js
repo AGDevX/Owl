@@ -7,8 +7,8 @@ module.exports = {
 		baseHref: '/'
 	},
 	APP: {
-		name: 'React Seed (local)',
-		description: 'React starter app',
+		name: 'Owl (local)',
+		description: 'React starter application',
 		showReactRouterDomErrorPage: true,
 		enableServiceWorker: true,
 		autoSignIn: true

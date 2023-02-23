@@ -1,9 +1,10 @@
 {
-	"name": "reactseed",
+	"name": "owl",
 	"version": "1.0.0",
-	"description": "React starter app",
+	"description": "React starter application",
 	"keywords": [
 		"react",
+		"owl",
 		"seed",
 		"template",
 		"boilerplate"

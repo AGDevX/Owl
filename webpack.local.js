@@ -58,7 +58,7 @@ module.exports = merge(webpackConfig, {
 				useShortDoctype: true
 			}
 		}),
-		new webpack.DefinePlugin({ env: JSON.stringify(env) }) //-- stringify to avoid parsing issues (e.g. {"ENVIRONMENT":{"app":local,"node":development},"HOST":{"baseHref":/},"APP":{"name":React Seed (local)},"APP_STATE":{"counter":7}} )
+		new webpack.DefinePlugin({ env: JSON.stringify(env) }) //-- stringify to avoid parsing issues (e.g. {"ENVIRONMENT":{"app":local,"node":development},"HOST":{"baseHref":/},"APP":{"name":Owl (local)},"APP_STATE":{"counter":7}} )
 	],
 	devServer: {
 		static: {
