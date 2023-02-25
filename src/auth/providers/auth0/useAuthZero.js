@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { useAuth0 } from '@auth0/auth0-react';
 
-import useRouting from '../../../../routing/useRouting';
-import { accessTokenRetriever } from './accessToken';
+import useRouting from '../../../routing/useRouting';
+import { accessTokenRetriever } from './accessTokenRetriever';
 
 const useAuthZero = ({ oidcScopes, auth0 }) => {
 	const { user, isAuthenticated, isLoading, loginWithRedirect, logout, getAccessTokenSilently, getAccessTokenWithPopup } = useAuth0();

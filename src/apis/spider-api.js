@@ -1,5 +1,5 @@
 import { handleHttpResponse, handleHttpError } from './http-response-handlers';
-import { accessTokenRetriever } from '../auth/authN/providers/auth0/accessToken';
+import { accessTokenRetriever } from '../auth/providers/auth0/accessTokenRetriever';
 
 const baseUrl = env.APIS.spider.baseUrl;
 const audience = env.APIS.spider.audience;

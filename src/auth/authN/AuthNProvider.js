@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import AuthZeroProvider from './providers/auth0/AuthZeroProvider';
+import AuthZeroProvider from '../providers/auth0/AuthZeroProvider';
 import useAppConfig from '../../services/useAppConfig';
 
 const AuthNProvider = ({ children }) => {

@@ -20,13 +20,13 @@ const createLocalSslWindows = () => {
 	);
 	exec('powershell -command "start-process cmd -verb runas -argumentlist \'/c choco install mkcert\'"');
 	exec('mkcert -install');
-	exec('mkcert -cert-file ./localSsl/cert.pem -key-file ./localSsl/key.pem localhost 127.0.0.1 ::1');
+	exec('mkcert -cert-file ./localSsl/cert.pem -key-file ./localSsl/key.pem owl.local.com localhost 127.0.0.1 ::1');
 };
 
 const createLocalSslMac = () => {
 	exec('brew install mkcert');
 	exec('mkcert -install');
-	exec('mkcert -cert-file ./localSsl/cert.pem -key-file ./localSsl/key.pem localhost 127.0.0.1 ::1');
+	exec('mkcert -cert-file ./localSsl/cert.pem -key-file ./localSsl/key.pem owl.local.com localhost 127.0.0.1 ::1');
 };
 
 const platformDefault = process.argv[2] ?? 'win';

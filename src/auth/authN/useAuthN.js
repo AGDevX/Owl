@@ -1,4 +1,4 @@
-import useAuthZero from './providers/auth0/useAuthZero';
+import useAuthZero from '../providers/auth0/useAuthZero';
 import useAppConfig from '../../services/useAppConfig';
 
 const useAuthN = () => {

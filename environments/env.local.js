@@ -4,6 +4,7 @@ module.exports = {
 		node: 'development'
 	},
 	HOST: {
+		name: 'owl.local.com',
 		baseHref: '/'
 	},
 	APP: {
@@ -33,8 +34,10 @@ module.exports = {
 		auth0: {
 			domain: 'agdevx.auth0.com',
 			clientId: 'xIWLicq70VulQHYmihep3KYRO8pTAISC',
-			signInRedirectUrl: 'https://localhost:8080/auth-callback?auth-type=sign-in',
-			signOutRedirectUrl: 'https://localhost:8080/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
+			signInRedirectUrl: 'https://owl.local.com/auth-callback?auth-type=sign-in',
+			signOutRedirectUrl: 'https://owl.local.com/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
+			// signInRedirectUrl: 'https://localhost:8080/auth-callback?auth-type=sign-in',
+			// signOutRedirectUrl: 'https://localhost:8080/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
 		}
 	},
 	CLIENT_STORAGE: {

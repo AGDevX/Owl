@@ -61,6 +61,8 @@ module.exports = merge(webpackConfig, {
 		new webpack.DefinePlugin({ env: JSON.stringify(env) }) //-- stringify to avoid parsing issues (e.g. {"ENVIRONMENT":{"app":local,"node":development},"HOST":{"baseHref":/},"APP":{"name":Owl (local)},"APP_STATE":{"counter":7}} )
 	],
 	devServer: {
+		host: env.HOST.name,
+		port: 443,
 		static: {
 			directory: path.join(__dirname, srcPublicPath)
 		},
