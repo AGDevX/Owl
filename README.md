@@ -11,8 +11,10 @@ This application can be used out of the box for demo purposes, but if it's used 
 - Build & Dev
   - yarn 2
   - Webpack
+    - Chunking & cache busting
+    - Minify & uglify code
   - Babel
-  - ESLint
+  - ESLint (using "flat config")
   - Prettier
   - Husky githook integration
     - Linting of staged files prior to git comments
@@ -21,15 +23,19 @@ This application can be used out of the box for demo purposes, but if it's used 
   - Webpack DevServer
   - Local HTTPS
 - App
-  - Easy configuration per environment
+  - Easy configuration per environment (even for Webpack config)
   - Authentication via OIDC using Auth0 as a provider
+    - Public & Private routes
   - Api Authorization via OAuth 2.0 using Auth0 as a provider
   - Client-side storage using IndexedDb via LocalForage (can be switched to other locations)
   - Redux & Redux Toolkit integration
   - Modular architecture
   - Centralized Routing
+    - Routing via React Router DOM's `BrowserRouter` using `RouterProvider` & `Outlet`s
+  - Deep linking
   - Installable PWA
     - Service Worker configured via Workbox
+  - No UI framework (use whatever you'd like)
   - robots.txt
 
 <br />
@@ -73,7 +79,7 @@ The values used for the configuration should be changed to match your applicatio
 
 ### AuthZ (are you allowed to do what you're trying to do?)
 
-The Spider Api is protected by the [OAuth 2.0](https://oauth.net/2/) and uses Auth0 as the Authorization Server. When Owl needs to consume the Spider Api, it first requests an access token from Auth0 and passes it to the Spider Api in the `Authorization` HTTP request header.
+The Spider Api is protected by the [OAuth 2.0](https://oauth.net/2/) protocol and uses Auth0 as the Authorization Server. When Owl needs to consume the Spider Api, it first requests an access token from Auth0 and passes it to the Spider Api in the `Authorization` HTTP request header.
 
 See the [Spider Api README](https://github.com/AGDevX/Spider#readme) for it's OAuth 2.0 implementation.
 

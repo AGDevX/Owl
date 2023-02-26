@@ -23,7 +23,7 @@ const useAuthNService = () => {
 		if (validAuthReturnRouteTypes.some((rt) => rt === currentRoute.type)) {
 			set(StorageKey.AuthNReturnRoute, currentRoute);
 		} else if (!currentAuthReturnRoute) {
-			set(StorageKey.AuthNReturnRoute, getHomeRoute());
+			set(StorageKey.AuthNReturnRoute, getRouteOfType(RouteType.Home));
 		}
 	};
 

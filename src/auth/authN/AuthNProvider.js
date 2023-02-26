@@ -4,7 +4,7 @@ import AuthZeroProvider from '../providers/auth0/AuthZeroProvider';
 import useAppConfig from '../../services/useAppConfig';
 
 const AuthNProvider = ({ children }) => {
-	const { provider, oidcScopes, auth0 } = useAppConfig().AUTH_N;
+	const { provider, oidcScopes, auth0 } = useAppConfig().AUTH;
 
 	const renderProvider = () => {
 		if (provider === 'auth0') {
