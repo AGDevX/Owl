@@ -7,6 +7,7 @@ const RouteType = Object.freeze({
 	ConsentRequired: Symbol('consent-required'),
 	Content: Symbol('content'),
 	Home: Symbol('home'),
+	Error: Symbol('error'),
 	NotFound: Symbol('not-found')
 });
 

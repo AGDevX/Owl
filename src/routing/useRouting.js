@@ -1,5 +1,5 @@
 import { matchRoutes, useLocation, useNavigate } from 'react-router-dom';
-import { allRoutes } from './routes';
+import { allRoutes, getRouteOfType } from './routes';
 import RouteType from './routeType';
 
 const useRouting = () => {
@@ -8,11 +8,6 @@ const useRouting = () => {
 
 	const getCurrentRoute = () => {
 		const { route } = matchRoutes(allRoutes, location).find((m) => m.pathname === location.pathname);
-		return route;
-	};
-
-	const getHomeRoute = () => {
-		const route = allRoutes.find((r) => r.type === RouteType.Home);
 		return route;
 	};
 
@@ -25,7 +20,7 @@ const useRouting = () => {
 		allRoutes,
 		RouteType,
 		getCurrentRoute,
-		getHomeRoute,
+		getRouteOfType,
 		navigateToConsentRequiredRoute
 	};
 };

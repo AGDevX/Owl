@@ -27,13 +27,13 @@ export const handleHttpResponse = async (httpResponse) => {
 	});
 
 	const response = {
+		isOk: httpResponse.ok,
+		statusCode: httpResponse.status,
+		statusText: httpResponse.statusText,
 		type: httpResponse.type,
+		redirected: httpResponse.redirected,
 		url: httpResponse.url,
 		headers,
-		ok: httpResponse.ok,
-		status: httpResponse.status,
-		statusText: httpResponse.statusText,
-		redirected: httpResponse.redirected,
 		data: responseData
 	};
 

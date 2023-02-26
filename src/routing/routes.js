@@ -7,3 +7,8 @@ import structureRoutes from './routes.structure';
 export const allRoutes = [...authRoutes, ...homeRoutes, ...counterRoutes, ...fooBarRoutes, ...structureRoutes];
 export const publicRoutes = allRoutes.filter((r) => !r.private);
 export const privateRoutes = allRoutes.filter((r) => r.private);
+
+export const getRouteOfType = (routeType) => {
+	const route = allRoutes.find((r) => r.type === routeType);
+	return route;
+};

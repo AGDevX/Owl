@@ -2,14 +2,14 @@ import useRouting from '../../routing/useRouting';
 import { useClientStorage, StorageKey } from '../../libs/clientStorage/useClientStorage';
 
 const useAuthNService = () => {
-	const { RouteType, getCurrentRoute, getHomeRoute } = useRouting();
+	const { RouteType, getCurrentRoute, getRouteOfType } = useRouting();
 	const { get, set } = useClientStorage();
 
 	const getAuthReturnRoute = async (signOut = false) => {
-		const route = (await get(StorageKey.AuthNReturnRoute)) ?? getHomeRoute();
+		const route = (await get(StorageKey.AuthNReturnRoute)) ?? getRouteOfType(RouteType.Home);
 
 		if (signOut) {
-			return route.private ? getHomeRoute() : route;
+			return route.private ? getRouteOfType(RouteType.Home) : route;
 		}
 
 		return route;

@@ -6,21 +6,36 @@ import { SliceStatus } from './sliceStatus';
 export const userSlice = createSlice({
 	name: 'user',
 	initialState: {
-		info: null,
-		status: SliceStatus.Initial
+		reduxStatus: SliceStatus.Initial,
+		httpStatusCode: undefined,
+		httpStatusText: undefined,
+		code: undefined,
+		messages: undefined,
+		value: undefined
 	},
 	reducers: {},
 	extraReducers: (builder) => {
 		builder
 			.addCase(getInfo.pending, (state) => {
-				state.status = SliceStatus.Loading;
+				state.reduxStatus = SliceStatus.Loading;
 			})
 			.addCase(getInfo.fulfilled, (state, action) => {
-				state.status = SliceStatus.Loaded;
-				state.info = action.payload;
+				state.reduxStatus = SliceStatus.Loaded;
+
+				const httpResponse = action.payload;
+				state.httpStatusCode = httpResponse.statusCode;
+				state.httpStatusText = httpResponse.statusText;
+
+				state.code = httpResponse.data.code;
+				state.messages = httpResponse.data.messages;
+				state.value = httpResponse.data.value;
 			})
-			.addCase(getInfo.rejected, (state) => {
-				state.status = SliceStatus.LoadFailed;
+			.addCase(getInfo.rejected, (state, action) => {
+				state.reduxStatus = SliceStatus.LoadFailed;
+
+				const httpResponse = action.payload;
+				state.httpStatusCode = httpResponse.statusCode;
+				state.httpStatusText = httpResponse.statusText;
 			});
 	}
 });

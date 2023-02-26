@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { initialState } from '../../initialState';
+import initialState from '../../initialState';
 import { get, remove } from '../thunks/albumThunk';
 import { SliceStatus } from './sliceStatus';
 
