@@ -86,7 +86,8 @@ See the [Spider Api README](https://github.com/AGDevX/Spider#readme) for it's OA
 
 Using a Host other than localhost and running under HTTPS will prevent browsers from throwing SameSite cookie errors.
 
-- Add 'owl.local.com' to your hosts file
+- Add `owl.local.com` to your hosts file
+  - If you want to change the URL, do a search and replace on the entire codebase
 - Run the command `yarn createLocalSsl [win|mac]`
   - `win` used by default
 
@@ -109,6 +110,6 @@ Using a Host other than localhost and running under HTTPS will prevent browsers 
 
 # Tech Debt
 
-- Add http errors to redux slices to help with troubleshooting network errors
-- Redirect to an error page from a Thunk in case of critical errors from which we cannot recovered
+- Redirect to an error page from a Thunk in case of critical errors from which we cannot recover
+  - `redux-first-history` is not compatible with React Router DOM's `RouterProvider` (https://github.com/salvoravida/redux-first-history/issues/95)
 - Switch to using eslint.config.js when the ESLint extension better supports it
