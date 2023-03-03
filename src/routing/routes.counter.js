@@ -6,7 +6,7 @@ export default [
 		id: 'counter',
 		name: 'Counter',
 		enabled: true,
-		private: true,
+		private: false,
 		type: RouteType.Content,
 		path: '/counter',
 		element: <Counter />,

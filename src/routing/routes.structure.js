@@ -4,16 +4,6 @@ import NotFound from '../structure/NotFound';
 
 export default [
 	{
-		id: 'not-found',
-		name: 'Not Found',
-		enabled: true,
-		private: false,
-		type: RouteType.NotFound,
-		path: '*',
-		element: <NotFound />,
-		children: []
-	},
-	{
 		id: 'error',
 		name: 'Error',
 		enabled: true,
@@ -21,6 +11,16 @@ export default [
 		type: RouteType.Error,
 		path: '/error',
 		element: <Error />,
+		children: []
+	},
+	{
+		id: 'not-found',
+		name: 'Not Found',
+		enabled: true,
+		private: false,
+		type: RouteType.NotFound,
+		path: '*',
+		element: <NotFound />,
 		children: []
 	}
 ];
