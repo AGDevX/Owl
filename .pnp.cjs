@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.36.0"],\
             ["eslint-plugin-react", "virtual:25c014dc19cf79c30e19eac8745f57e4c32fadb9cc6550a58095071b05551c558911b3cb8f9a19fcdd5a8d52372a4efe19e011eb544d5351a8a841202c96696d#npm:7.32.2"],\
             ["globals", "npm:13.20.0"],\
+            ["hostile", "npm:1.3.3"],\
             ["html-webpack-plugin", "virtual:25c014dc19cf79c30e19eac8745f57e4c32fadb9cc6550a58095071b05551c558911b3cb8f9a19fcdd5a8d52372a4efe19e011eb544d5351a8a841202c96696d#npm:5.5.0"],\
             ["husky", "npm:8.0.3"],\
             ["lint-staged", "npm:13.2.0"],\
@@ -6528,6 +6529,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["hostile", [\
+        ["npm:1.3.3", {\
+          "packageLocation": "./.yarn/cache/hostile-npm-1.3.3-a39a962106-2282b0ae57.zip/node_modules/hostile/",\
+          "packageDependencies": [\
+            ["hostile", "npm:1.3.3"],\
+            ["chalk", "npm:4.1.2"],\
+            ["minimist", "npm:1.2.8"],\
+            ["once", "npm:1.4.0"],\
+            ["split", "npm:1.0.1"],\
+            ["through", "npm:2.3.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["hpack.js", [\
         ["npm:2.1.6", {\
           "packageLocation": "./.yarn/cache/hpack.js-npm-2.1.6-b08cc088ad-2de1441151.zip/node_modules/hpack.js/",\
@@ -7950,6 +7965,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["minimist", [\
+        ["npm:1.2.8", {\
+          "packageLocation": "./.yarn/cache/minimist-npm-1.2.8-d7af7b1dce-75a6d645fb.zip/node_modules/minimist/",\
+          "packageDependencies": [\
+            ["minimist", "npm:1.2.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["minipass", [\
         ["npm:3.3.6", {\
           "packageLocation": "./.yarn/cache/minipass-npm-3.3.6-b8d93a945b-a30d083c80.zip/node_modules/minipass/",\
@@ -8418,6 +8442,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.36.0"],\
             ["eslint-plugin-react", "virtual:25c014dc19cf79c30e19eac8745f57e4c32fadb9cc6550a58095071b05551c558911b3cb8f9a19fcdd5a8d52372a4efe19e011eb544d5351a8a841202c96696d#npm:7.32.2"],\
             ["globals", "npm:13.20.0"],\
+            ["hostile", "npm:1.3.3"],\
             ["html-webpack-plugin", "virtual:25c014dc19cf79c30e19eac8745f57e4c32fadb9cc6550a58095071b05551c558911b3cb8f9a19fcdd5a8d52372a4efe19e011eb544d5351a8a841202c96696d#npm:5.5.0"],\
             ["husky", "npm:8.0.3"],\
             ["lint-staged", "npm:13.2.0"],\
@@ -9971,6 +9996,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["obuf", "npm:1.1.2"],\
             ["readable-stream", "npm:3.6.0"],\
             ["wbuf", "npm:1.7.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["split", [\
+        ["npm:1.0.1", {\
+          "packageLocation": "./.yarn/cache/split-npm-1.0.1-88871d88a2-12f4554a57.zip/node_modules/split/",\
+          "packageDependencies": [\
+            ["split", "npm:1.0.1"],\
+            ["through", "npm:2.3.8"]\
           ],\
           "linkType": "HARD"\
         }]\
