@@ -35,14 +35,14 @@
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^11.0.0",
 		"css-loader": "^6.7.3",
-		"eslint": "^8.34.0",
+		"eslint": "^8.36.0",
 		"eslint-plugin-react": "^7.32.2",
 		"globals": "^13.20.0",
 		"html-webpack-plugin": "^5.5.0",
 		"husky": "^8.0.3",
-		"lint-staged": "^13.1.2",
+		"lint-staged": "^13.2.0",
 		"style-loader": "^3.3.1",
-		"webpack": "^5.75.0",
+		"webpack": "^5.76.1",
 		"webpack-cli": "^5.0.1",
 		"webpack-dev-server": "^4.11.1",
 		"webpack-merge": "^5.8.0",
@@ -56,7 +56,7 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-redux": "^8.0.5",
-		"react-router-dom": "^6.8.1",
+		"react-router-dom": "^6.9.0",
 		"workbox-recipes": "^6.5.4"
 	}
 }
