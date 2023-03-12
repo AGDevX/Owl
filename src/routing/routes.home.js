@@ -1,5 +1,5 @@
 import RouteType from './routeType';
-import Home from '../pages/Home';
+import Home from '../content/Home';
 
 export default [
 	{

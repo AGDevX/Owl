@@ -1,5 +1,5 @@
 import RouteType from './routeType';
-import UserInfo from '../pages/UserInfo';
+import UserInfo from '../content/UserInfo';
 
 export default [
 	{

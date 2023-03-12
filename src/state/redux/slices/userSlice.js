@@ -33,9 +33,13 @@ export const userSlice = createSlice({
 			.addCase(getInfo.rejected, (state, action) => {
 				state.reduxStatus = SliceStatus.LoadFailed;
 
-				const httpResponse = action.payload;
-				state.httpStatusCode = httpResponse.statusCode;
-				state.httpStatusText = httpResponse.statusText;
+				if (action.payload) {
+					const httpResponse = action.payload;
+					state.httpStatusCode = httpResponse.statusCode;
+					state.httpStatusText = httpResponse.statusText;
+				} else if (action.error) {
+					state.httpStatusText = action.error.message;
+				}
 			});
 	}
 });

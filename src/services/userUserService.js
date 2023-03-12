@@ -13,7 +13,7 @@ const useUserService = () => {
 
 		if (email) {
 			var userInfo = await dispatch(getInfo(email));
-			return userInfo.payload.data.value;
+			return userInfo.payload?.data.value;
 		}
 
 		return null;

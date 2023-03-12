@@ -1,7 +1,7 @@
 import RouteType from './routeType';
-import FooBar from '../pages/FooBar';
-import Foo from '../pages/Foobar/Foo';
-import Bar from '../pages/Foobar/Bar';
+import FooBar from '../content/FooBar';
+import Foo from '../content/Foobar/Foo';
+import Bar from '../content/Foobar/Bar';
 
 export default [
 	{

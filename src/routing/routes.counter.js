@@ -1,5 +1,5 @@
 import RouteType from './routeType';
-import Counter from '../pages/Counter';
+import Counter from '../content/Counter';
 
 export default [
 	{
