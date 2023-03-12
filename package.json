@@ -18,11 +18,11 @@
 		"yarn": ">=3"
 	},
 	"scripts": {
+		"prepare": "husky install",
 		"createLocalSsl": "node ./localSsl/createLocalSsl.js win",
-		"lint": "eslint .",
+		"lint": "eslint . -c eslint.commit.js",
 		"build": "webpack --config webpack.local.js",
-		"watch": "webpack serve --config webpack.local.js",
-		"prepare": "husky install"
+		"watch": "webpack serve --config webpack.local.js"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
