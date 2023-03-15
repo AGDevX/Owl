@@ -4,7 +4,7 @@ const hostile = require('hostile');
 const { exec } = require('child_process');
 
 const createLocalSsl = (platform) => {
-	const localDomain = 'owl.local.com';
+	const localDomain = 'owl-local.agdevx.com';
 	const localhost = 'localhost';
 	const localIpV4 = '127.0.0.1';
 	const localIpV6 = '::1';

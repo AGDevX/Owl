@@ -69,9 +69,9 @@ The values used for the configuration should be changed to match your applicatio
 2. Create a new Single Page Application
    - Name: _Owl_
    - Description: _React starter application_
-   - Allowed Callback URLs: _https://owl.local.com/auth-callback_
-   - Allowed Logout URLs: _https://owl.local.com/auth-callback?auth-type=sign-out_
-   - Allowed Web Origins: _https://owl.local.com_
+   - Allowed Callback URLs: _https://owl-local.agdevx.com/auth-callback_
+   - Allowed Logout URLs: _https://owl-local.agdevx.com/auth-callback?auth-type=sign-out_
+   - Allowed Web Origins: _https://owl-local.agdevx.com_
    - Other settigs: _default value_
    - Advanced Settings:
      - Grant Types: _Authorization Code_, _Refresh Token_
@@ -156,7 +156,7 @@ See the [Spider Api README](https://github.com/AGDevX/Spider#readme) for it's OA
 
 Using a Host other than localhost and running under HTTPS will prevent browsers from throwing SameSite cookie errors.
 
-The local URL for this app is `owl.local.com`. If you want to change the URL, do a search and replace on the entire codebase.
+The local URL for this app is `owl-local.agdevx.com`. If you want to change the URL, do a search and replace on the entire codebase.
 
 <br />
 
