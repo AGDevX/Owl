@@ -182,6 +182,7 @@ The local URL for this app is `owl-local.agdevx.com`. If you want to change the 
 
 # Tech Debt
 
+- Add route authorization handling
 - Redirect to an error page from a Thunk in case of critical errors from which we cannot recover
   - `redux-first-history` is not compatible with React Router DOM's `RouterProvider` (https://github.com/salvoravida/redux-first-history/issues/95)
 - Switch to using eslint.config.js when the ESLint extension better supports it
