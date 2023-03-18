@@ -1,9 +1,10 @@
 # About Owl
 
-Owl is meant to be a starter / educational application with a few bells and whistles built in. It is slightly opinionated, but there's nothing that can't be changed to get the desired behavior.
+Owl is meant to be a starter / educational / inspirational application with a few bells and whistles built in. It is kind of opinionated, but there's nothing that can't be changed to get the desired behavior.
 
 This application can be used out of the box for demo purposes, but if it's used as a basis for a new application then there's a little customization that needs to happen. This README will get you going.
 
+<br />
 <br />
 
 # Features
@@ -22,6 +23,7 @@ This application can be used out of the box for demo purposes, but if it's used 
 - Hosting
   - Webpack DevServer
   - Local HTTPS
+  - Deployment instructions to various hosts
 - App
   - Easy configuration per environment (even for Webpack config)
   - Authentication via OIDC with Auth0 as a provider
@@ -50,6 +52,8 @@ The [Spider Api](https://github.com/AGDevX/Spider) is like Owl in that it is a s
 # Customizing Owl
 
 If you like the behavior of the app then most of the customization only needs to happen in the `environment` folder, `package.json` file, and `webmanifest` file. Otherwise, feel free to remove or change the functionality to your liking.
+
+<br />
 
 ## Authentication & Authorization
 
@@ -152,18 +156,18 @@ See the [Spider Api README](https://github.com/AGDevX/Spider#readme) for it's OA
 
 # Initial Setup
 
-## Host
+The instructions and scripts for Owl were written with Windows 10 and later in mind.
 
-Using a Host other than localhost and running under HTTPS will prevent browsers from throwing SameSite cookie errors.
+## Hosting locally
+
+Using a host other than localhost and running under HTTPS will prevent browsers from throwing `SameSite` cookie errors.
 
 The local URL for this app is `owl-local.agdevx.com`. If you want to change the URL, do a search and replace on the entire codebase.
 
 <br />
 
-- Run the command `yarn createLocalSsl [win|mac]`
-  - `win` used by default
+- Run the command `yarn createLocalSsl`
 
-<br />
 <br />
 
 ## Install dependencies
@@ -176,6 +180,49 @@ The local URL for this app is `owl-local.agdevx.com`. If you want to change the 
 # Start the application
 
 - Run the command `yarn watch`
+
+<br />
+<br />
+
+# Deployment
+
+Owl is deployed to a number of places. These are the steps required to deploy Owl to a hosting service.
+
+<br />
+
+## Google Cloud Platform (GCP) - App Engine
+
+GCP offers a generous free tier for small, personal projects. Custom domains are supported with the GCP App Engine (GAE) free tier.
+
+- Set up a GCP account (these are free; the services incur the costs)
+- Create an App Engine (there is a free tier)
+- Create `app.yaml` in the root of the `src` folder
+- Build the app: `yarn build-gcp`
+- Install the [Google Cloud SDK](https://cloud.google.com/sdk/?authuser=4)
+- Initialize the Google Cloud SDK: `gcloud init`
+- Deploy to App Engine: `gcloud app deploy`
+  - View and manage the deployed instances by looking at the `Versions` blade in the App Engine administration page
+- Create a prod app registration with Auth0 using your custom URLs or the URLs provided by GCP
+
+_NOTE: Some parts of Owl will not work if the Spider Api is not hosted somewhere Owl can get to when deployed to GCP._
+
+<br />
+
+## Amazon Web Services (AWS) - Elastic Beanstalk
+
+Planned
+
+_NOTE: Some parts of Owl will not work if the Spider Api is not hosted somewhere Owl can get to when deployed to AWS._
+
+<br />
+
+## Microsoft Azure - App Service
+
+Microsoft offers are free tier for App Services. Custom domains are not supported with the free tier.
+
+Planned
+
+_NOTE: Some parts of Owl will not work if the Spider Api is not hosted somewhere Owl can get to when deployed to Azure._
 
 <br />
 <br />
