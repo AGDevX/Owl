@@ -33,7 +33,6 @@ You can see this app running at [https://owl-gcp.agdevx.com](https://owl-gcp.agd
 - Hosting
   - Webpack DevServer
   - Local HTTPS
-  - Deployment instructions to various hosts
 - App
   - Easy configuration per environment (even for Webpack config)
   - Authentication via OIDC with Auth0 as a provider
@@ -48,6 +47,8 @@ You can see this app running at [https://owl-gcp.agdevx.com](https://owl-gcp.agd
   - Installable PWA
     - Service Worker configured via Workbox
   - No UI framework (use whatever you'd like)
+    - It's ugly on purpose
+    - Exposes links to all pages on purpose, but this is not behavior you'd want in a production app
   - robots.txt
 
 <br />
@@ -218,6 +219,7 @@ GCP offers a generous free tier for small, personal projects. Custom domains are
 - Install the [Google Cloud SDK](https://cloud.google.com/sdk/?authuser=4)
 - Initialize the Google Cloud SDK: `gcloud init` (this only needs done once unless changes were made to the Project in GCP)
 - Deploy to App Engine: `gcloud app deploy`
+  - _Note_: This is a primitive way of deploying an application. I recommend using a CI/CD pipeline to automatically handle these tasks for you.
   - View and manage the deployed instances by looking at the `Versions` blade in the App Engine administration page
 - Create a prod app registration with Auth0 using your custom URLs or the URLs provided by GCP
 
