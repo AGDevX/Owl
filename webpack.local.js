@@ -8,14 +8,14 @@ const webpackConfig = require('./webpack.config');
 const env = require('./environments/env.local');
 
 const srcPublicPath = './src/public';
-const distPath = `./dist/${env.ENVIRONMENT.app}`;
+const distPath = `./dist/${env.HOST.provider}.${env.ENVIRONMENT.app}`;
 
 module.exports = merge(webpackConfig, {
 	mode: env.ENVIRONMENT.node,
 	output: {
 		path: path.resolve(__dirname, distPath),
 		publicPath: env.HOST.baseHref,
-		filename: `[name].${env.ENVIRONMENT.app}.[contenthash].js`
+		filename: `[name].${env.HOST.provider}.${env.ENVIRONMENT.app}.[contenthash].js`
 	},
 	devtool: 'source-map',
 	plugins: [

@@ -2,7 +2,17 @@
 
 Owl is meant to be a starter / educational / inspirational application with a few bells and whistles built in. It is kind of opinionated, but there's nothing that can't be changed to get the desired behavior.
 
-This application can be used out of the box for demo purposes, but if it's used as a basis for a new application then there's a little customization that needs to happen. This README will get you going.
+If this is used as a basis for a new application then there's a little customization that needs to happen. This README will get you going.
+
+<br />
+
+## Demo
+
+You can see this app running at [https://owl-gcp.agdevx.com](https://owl-gcp.agdevx.com).
+
+- Auth0 test credentials
+  - Email: august.geier@reddwarfjmcagdx.com
+  - Password: Itscoldoutside1
 
 <br />
 <br />
@@ -28,7 +38,7 @@ This application can be used out of the box for demo purposes, but if it's used 
   - Easy configuration per environment (even for Webpack config)
   - Authentication via OIDC with Auth0 as a provider
     - Public & Private routes
-  - Api Authorization via OAuth 2.0 using Auth0 as a provider
+  - API Authorization via OAuth 2.0 using Auth0 as a provider
   - Client-side storage using IndexedDb via LocalForage (can be switched to other locations)
   - Redux & Redux Toolkit integration
   - Modular architecture
@@ -42,9 +52,9 @@ This application can be used out of the box for demo purposes, but if it's used 
 
 <br />
 
-## Spider Api
+## Spider API
 
-The [Spider Api](https://github.com/AGDevX/Spider) is like Owl in that it is a starter application, but for .NET Core Web Apis. Owl is minimally dependent on the API. It's only purpose is to demonstrate how API calls can be made to secure APIs. This dependency can be easily removed.
+The [Spider API](https://github.com/AGDevX/Spider) is like Owl in that it is a starter application, but for .NET Core Web Apis. Owl is minimally dependent on the API. It's only purpose is to demonstrate how API calls can be made to secure APIs. This dependency can be easily removed.
 
 <br />
 <br />
@@ -57,7 +67,7 @@ If you like the behavior of the app then most of the customization only needs to
 
 ## Authentication & Authorization
 
-Owl leverages the Auth0 platform to authenticate users and to request access tokens using the PKCE flow for calling the Spider Api.
+Owl leverages the Auth0 platform to authenticate users and to request access tokens using the PKCE flow for calling the Spider API.
 
 <br />
 
@@ -70,6 +80,7 @@ Users are authenticated using the [OpenId Connect (OIDC)](https://openid.net/con
 The values used for the configuration should be changed to match your application. Settings not explicitly called out were kept at their default value.
 
 1. Create a free account at [auth0.com](https://auth0.com/)
+
 2. Create a new Single Page Application
    - Name: _Owl_
    - Description: _React starter application_
@@ -79,8 +90,13 @@ The values used for the configuration should be changed to match your applicatio
    - Other settigs: _default value_
    - Advanced Settings:
      - Grant Types: _Authorization Code_, _Refresh Token_
-3. Use your Auth0 configuration to update the `environments` config files
-4. Create a custom action and add it to the Login Flow
+3. Create a user in Auth0
+
+   - Assign to the user the Employee role (this role is pre-defined by Auth0)
+
+4. Use your Auth0 configuration to update the `environments` config files
+
+5. Create a custom action and add it to the Login Flow
 
 - This will add user claims to the id and access tokens
 
@@ -147,9 +163,9 @@ exports.onExecutePostLogin = async (event, api) => {
 
 ### AuthZ (are you allowed to do what you're trying to do?)
 
-The Spider Api is protected by the [OAuth 2.0](https://oauth.net/2/) protocol and uses Auth0 as the Authorization Server. When Owl needs to consume the Spider Api, it first requests an access token from Auth0 and passes it to the Spider Api in the `Authorization` HTTP request header.
+The Spider API is protected by the [OAuth 2.0](https://oauth.net/2/) protocol and uses Auth0 as the Authorization Server. When Owl needs to consume the Spider API, it first requests an access token from Auth0 and passes it to the Spider API in the `Authorization` HTTP request header.
 
-See the [Spider Api README](https://github.com/AGDevX/Spider#readme) for it's OAuth 2.0 implementation.
+See the [Spider API README](https://github.com/AGDevX/Spider#readme) for it's OAuth 2.0 implementation.
 
 <br />
 <br />
@@ -186,7 +202,7 @@ The local URL for this app is `owl-local.agdevx.com`. If you want to change the 
 
 # Deployment
 
-Owl is deployed to a number of places. These are the steps required to deploy Owl to a hosting service.
+Owl can be deployed to a number of places. These are the steps required to deploy Owl to a hosting service.
 
 <br />
 
@@ -195,16 +211,17 @@ Owl is deployed to a number of places. These are the steps required to deploy Ow
 GCP offers a generous free tier for small, personal projects. Custom domains are supported with the GCP App Engine (GAE) free tier.
 
 - Set up a GCP account (these are free; the services incur the costs)
+- Create a Project (these are free; the services incur the costs)
 - Create an App Engine (there is a free tier)
 - Create `app.yaml` in the root of the `src` folder
 - Build the app: `yarn build-gcp`
 - Install the [Google Cloud SDK](https://cloud.google.com/sdk/?authuser=4)
-- Initialize the Google Cloud SDK: `gcloud init`
+- Initialize the Google Cloud SDK: `gcloud init` (this only needs done once unless changes were made to the Project in GCP)
 - Deploy to App Engine: `gcloud app deploy`
   - View and manage the deployed instances by looking at the `Versions` blade in the App Engine administration page
 - Create a prod app registration with Auth0 using your custom URLs or the URLs provided by GCP
 
-_NOTE: Some parts of Owl will not work if the Spider Api is not hosted somewhere Owl can get to when deployed to GCP._
+_NOTE: Some parts of Owl will not work if the Spider API is not hosted somewhere Owl can get to when deployed to GCP._
 
 <br />
 
@@ -212,7 +229,7 @@ _NOTE: Some parts of Owl will not work if the Spider Api is not hosted somewhere
 
 Planned
 
-_NOTE: Some parts of Owl will not work if the Spider Api is not hosted somewhere Owl can get to when deployed to AWS._
+_NOTE: Some parts of Owl will not work if the Spider API is not hosted somewhere Owl can get to when deployed to AWS._
 
 <br />
 
@@ -222,7 +239,7 @@ Microsoft offers are free tier for App Services. Custom domains are not supporte
 
 Planned
 
-_NOTE: Some parts of Owl will not work if the Spider Api is not hosted somewhere Owl can get to when deployed to Azure._
+_NOTE: Some parts of Owl will not work if the Spider API is not hosted somewhere Owl can get to when deployed to Azure._
 
 <br />
 <br />

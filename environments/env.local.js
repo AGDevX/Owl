@@ -4,6 +4,7 @@ module.exports = {
 		node: 'development'
 	},
 	HOST: {
+		provider: 'localhost',
 		name: 'owl-local.agdevx.com',
 		baseHref: '/' //-- Should be / if the application is hosted at the root of the (sub)domain
 	},

@@ -1,4 +1,4 @@
-# https://cloud.google.com/appengine/docs/standard/reference/app-yaml?tab=python
+# https://cloud.google.com/appengine/docs/standard/reference/app-yaml?tab=nodejs
 
 runtime: nodejs18
 env: standard
@@ -6,14 +6,14 @@ instance_class: F1
 handlers:
   # Serve all static files with url ending with a file extension
   - url: /(.*\..+)$
-    static_files: dist/prod/\1
-    upload: dist/prod/(.*\..+)$
+    static_files: dist/gcp.prod/\1
+    upload: dist/gcp.prod/(.*\..+)$
   # Catch all handler to index.html
   - url: /.*
-    static_files: dist/prod/index.html
-    upload: dist/prod/index.html
+    static_files: dist/gcp.prod/index.html
+    upload: dist/gcp.prod/index.html
 error_handlers:
-  - file: dist/prod/error.html
+  - file: dist/gcp.prod/error.html
 automatic_scaling:
   min_instances: 0
   max_instances: 1

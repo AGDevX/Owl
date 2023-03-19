@@ -4,6 +4,7 @@ module.exports = {
 		node: 'production'
 	},
 	HOST: {
+		provider: 'gcp',
 		name: 'owl-gcp.agdevx.com',
 		baseHref: '/' //-- Should be / if the application is hosted at the root of the (sub)domain
 	},
@@ -20,7 +21,7 @@ module.exports = {
 	},
 	APIS: {
 		spider: {
-			baseUrl: 'https://spider-gcp.agdevx.com',
+			baseUrl: 'https://spider-netcore.azurewebsites.net',
 			audience: 'api://agdevx/spider-web-api/prod',
 			scopes: ['api:access']
 		},
