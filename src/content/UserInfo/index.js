@@ -10,7 +10,7 @@ const UserInfo = () => {
 			var info = await getUserInfo(email);
 			setDirectUserInfo(info);
 		};
-		get('agdevx@gmail.com');
+		get('august.geier@reddwarfjmcagdx.com');
 	}, []);
 
 	return (

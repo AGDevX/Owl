@@ -1,7 +1,7 @@
 {
 	"name": "owl",
 	"version": "1.0.0",
-	"description": "React starter application",
+	"description": "React starter / educational / inspirational application",
 	"keywords": [
 		"react",
 		"owl",
@@ -14,14 +14,15 @@
 	"private": true,
 	"packageManager": "yarn@3.3.1",
 	"engines": {
-		"node": ">=19",
+		"node": ">=18",
 		"yarn": ">=3"
 	},
 	"scripts": {
 		"prepare": "husky install",
-		"createLocalSsl": "node ./localSsl/createLocalSsl.js win",
+		"createLocalSsl": "node ./localSsl/create-local-ssl.js win",
 		"lint": "eslint . -c eslint.commit.js",
 		"build": "webpack --config webpack.local.js",
+		"build-gcp": "webpack --config webpack.gcp.js",
 		"watch": "webpack serve --config webpack.local.js"
 	},
 	"devDependencies": {

@@ -32,7 +32,9 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [
 				{ from: `${srcPublicPath}/assets`, to: 'assets' },
+				{ from: `${srcPublicPath}/error.html`, to: '' },
 				{ from: `${srcPublicPath}/manifest.webmanifest`, to: '' },
+				{ from: `${srcPublicPath}/offline.html`, to: '' },
 				{ from: `${srcPublicPath}/robots.txt`, to: '' }
 			]
 		}),

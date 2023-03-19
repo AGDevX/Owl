@@ -2,9 +2,10 @@
 
 const hostile = require('hostile');
 const { exec } = require('child_process');
+const env = require('./environments/env.gcp');
 
 const createLocalSsl = (platform) => {
-	const localDomain = 'owl-local.agdevx.com';
+	const localDomain = env.HOST.name;
 	const localhost = 'localhost';
 	const localIpV4 = '127.0.0.1';
 	const localIpV6 = '::1';
@@ -24,8 +25,8 @@ const createLocalSsl = (platform) => {
 			createLocalSslWindows(addresses);
 			break;
 		case 'mac':
-			createLocalSslMac(addresses);
-			break;
+		case 'lin':
+			throw new Error('mac and linux OSes are not currently supported');
 	}
 };
 
@@ -44,12 +45,6 @@ const createLocalSslWindows = (addresses) => {
 		"powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
 	);
 	exec('powershell -command "start-process cmd -verb runas -argumentlist \'/c choco install mkcert\'"');
-	exec('mkcert -install');
-	exec(`mkcert -cert-file ./localSsl/cert.pem -key-file ./localSsl/key.pem ${addresses.join(' ')}`);
-};
-
-const createLocalSslMac = (addresses) => {
-	exec('brew install mkcert');
 	exec('mkcert -install');
 	exec(`mkcert -cert-file ./localSsl/cert.pem -key-file ./localSsl/key.pem ${addresses.join(' ')}`);
 };
