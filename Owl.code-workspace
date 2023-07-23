@@ -11,7 +11,7 @@
 		"editor.tabSize": 2,
 		"eslint.experimental.useFlatConfig": true,
 		"eslint.options": {
-			// "overrideConfigFile": "eslint.local.js"
+			"overrideConfigFile": "eslint.local.js"
 		},
 		"explorer.fileNesting.enabled": true,
 		"explorer.fileNesting.patterns": {
