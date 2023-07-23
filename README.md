@@ -6,17 +6,6 @@ If this is used as a basis for a new application then there's a little customiza
 
 <br />
 
-## Demo
-
-You can see this app running at [https://owl-gcp.agdevx.com](https://owl-gcp.agdevx.com).
-
-- Auth0 test credentials
-  - Email: august.geier@reddwarfjmcagdx.com
-  - Password: Itscoldoutside1
-
-<br />
-<br />
-
 # Features
 
 - Build & Dev
@@ -62,7 +51,7 @@ The [Spider API](https://github.com/AGDevX/Spider) is like Owl in that it is a s
 
 # Customizing Owl
 
-If you like the behavior of the app then most of the customization only needs to happen in the `environment` folder, `package.json` file, and `webmanifest` file. Otherwise, feel free to remove or change the functionality to your liking.
+If you like the behavior of the app then most of the customization only needs to happen in the `environments` folder, `package.json` file, and `webmanifest` file. Otherwise, feel free to remove or change the functionality to your liking.
 
 <br />
 
@@ -197,51 +186,6 @@ The local URL for this app is `owl-local.agdevx.com`. If you want to change the 
 # Start the application
 
 - Run the command `yarn watch`
-
-<br />
-<br />
-
-# Deployment
-
-Owl can be deployed to a number of places. These are the steps required to deploy Owl to a hosting service.
-
-<br />
-
-## Google Cloud Platform (GCP) - App Engine
-
-GCP offers a generous free tier for small, personal projects. Custom domains are supported with the GCP App Engine (GAE) free tier.
-
-- Set up a GCP account (these are free; the services incur the costs)
-- Create a Project (these are free; the services incur the costs)
-- Create an App Engine (there is a free tier)
-- Create `app.yaml` in the root of the `src` folder
-- Build the app: `yarn build-gcp`
-- Install the [Google Cloud SDK](https://cloud.google.com/sdk/?authuser=4)
-- Initialize the Google Cloud SDK: `gcloud init` (this only needs done once unless changes were made to the Project in GCP)
-- Deploy to App Engine: `gcloud app deploy`
-  - _Note_: This is a primitive way of deploying an application. I recommend using a CI/CD pipeline to automatically handle these tasks for you.
-  - View and manage the deployed instances by looking at the `Versions` blade in the App Engine administration page
-- Create a prod app registration with Auth0 using your custom URLs or the URLs provided by GCP
-
-_NOTE: Some parts of Owl will not work if the Spider API is not hosted somewhere Owl can get to when deployed to GCP._
-
-<br />
-
-## Amazon Web Services (AWS) - Elastic Beanstalk
-
-Planned
-
-_NOTE: Some parts of Owl will not work if the Spider API is not hosted somewhere Owl can get to when deployed to AWS._
-
-<br />
-
-## Microsoft Azure - App Service
-
-Microsoft offers are free tier for App Services. Custom domains are not supported with the free tier.
-
-Planned
-
-_NOTE: Some parts of Owl will not work if the Spider API is not hosted somewhere Owl can get to when deployed to Azure._
 
 <br />
 <br />
