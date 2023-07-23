@@ -21,8 +21,8 @@
 	"scripts": {
 		"prepare": "husky install",
 		"createLocalSsl": "node ./localSsl/create-local-ssl.js win",
+		"lint": "eslint . -c eslint.commit.js",
 		"lint-local": "eslint . -c eslint.local.js",
-		"lint-commit": "eslint . -c eslint.commit.js",
 		"build": "vite build --emptyOutDir",
 		"watch": "vite serve --c vite.config.js",
 		"preview": "vite preview"
