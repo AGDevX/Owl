@@ -50,6 +50,8 @@ export default defineConfig({
 		}),
 		VitePWA({
 			strategies: 'injectManifest',
+			injectRegister: null,
+			srcDir: 'public',
 			filename: 'sw.js'
 		}),
 		react({
