@@ -1,4 +1,4 @@
-module.exports = {
+const env = {
 	ENVIRONMENT: {
 		app: 'local',
 		node: 'development'
@@ -6,6 +6,8 @@ module.exports = {
 	HOST: {
 		provider: 'localhost',
 		name: 'owl-local.agdevx.com',
+		port: 443,
+		https: true,
 		baseHref: '/' //-- Should be / if the application is hosted at the root of the (sub)domain
 	},
 	APP: {
@@ -50,3 +52,5 @@ module.exports = {
 		}
 	}
 };
+
+export default env;

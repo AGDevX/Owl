@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title><%= htmlWebpackPlugin.options.title %></title>
-		<meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
+		<title><%= title %></title>
+		<meta name="description" content="<%= description %>" />
 
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-xompatible" content="IE=edge" />
@@ -20,9 +20,7 @@
 		<link href="/manifest.webmanifest" rel="manifest" />
 	</head>
 	<body style="margin: unset">
-		<noscript>
-			<%= htmlWebpackPlugin.options.title %> would be pretty boring without JavaScript. Please enable it!
-		</noscript>
+		<noscript> <%= title %> would be pretty boring without JavaScript. Please enable it! </noscript>
 		<div id="offline">
 			<p>Ummmm, something is wrong. Check back soon to give it another go.</p>
 		</div>

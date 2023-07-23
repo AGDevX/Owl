@@ -2,7 +2,7 @@
 
 const hostile = require('hostile');
 const { exec } = require('child_process');
-const env = require('./environments/env.local');
+const env = require('../environments/env.local');
 
 const createLocalSsl = (platform) => {
 	const localDomain = env.HOST.name;
