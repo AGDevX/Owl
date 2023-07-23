@@ -9,14 +9,15 @@
 		"editor.insertSpaces": false,
 		"editor.suggest.insertMode": "replace",
 		"editor.tabSize": 2,
-		"eslint.experimental.useFlatConfig": false,
-		"eslint.nodePath": ".yarn/sdks",
-		"eslint.packageManager": "yarn",
+		"eslint.experimental.useFlatConfig": true,
+		"eslint.options": {
+			"overrideConfigFile": "eslint.local.js"
+		},
 		"explorer.fileNesting.enabled": true,
 		"explorer.fileNesting.patterns": {
-			"eslint.config.js": "eslint.*.js",
-			"routes.js": "routes.*.js",
-			"webpack.config.js": "webpack.*.js"
+			"routes.*": "routes.*.js, routes.*.jsx",
+			"*.config.js": "$(capture).*.${extname}",
+			"*.config.cjs": "$(capture).*.${extname}"
 		},
 		"files.autoGuessEncoding": true,
 		"files.exclude": {
