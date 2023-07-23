@@ -17,6 +17,7 @@
 		"node": ">=18",
 		"yarn": ">=3"
 	},
+	"type": "module",
 	"scripts": {
 		"prepare": "husky install",
 		"createLocalSsl": "node ./localSsl/create-local-ssl.js win",
@@ -31,6 +32,7 @@
 		"@babel/plugin-proposal-export-default-from": "^7.18.10",
 		"@babel/preset-env": "^7.20.2",
 		"@babel/preset-react": "^7.18.6",
+		"@vitejs/plugin-react": "^4.0.3",
 		"@yarnpkg/sdks": "^3.0.0-rc.36",
 		"babel-loader": "^9.1.3",
 		"clean-webpack-plugin": "^4.0.0",
@@ -44,6 +46,8 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.3",
 		"style-loader": "^3.3.3",
+		"vite": "^4.4.6",
+		"vite-plugin-html": "^3.2.0",
 		"webpack": "^5.88.2",
 		"webpack-cli": "^5.1.4",
 		"webpack-dev-server": "^4.15.1",
