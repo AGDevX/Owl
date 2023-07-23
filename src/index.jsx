@@ -17,3 +17,4 @@ root.render(
 registerServiceWorker();
 
 var asdf = 'asdf';
+var asdf2 = 'asdf';
