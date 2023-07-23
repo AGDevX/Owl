@@ -22,7 +22,6 @@
 		"createLocalSsl": "node ./localSsl/create-local-ssl.js win",
 		"lint": "eslint . -c eslint.commit.js",
 		"build": "webpack --config webpack.local.js",
-		"build-gcp": "webpack --config webpack.gcp.js",
 		"watch": "webpack serve --config webpack.local.js"
 	},
 	"devDependencies": {
