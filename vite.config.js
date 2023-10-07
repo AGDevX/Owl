@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import react from '@vitejs/plugin-react';
 import fs from 'fs';
-import { VitePWA } from 'vite-plugin-pwa';
 
 import env from './environments/env.local';
 
@@ -47,12 +46,6 @@ export default defineConfig({
 					description: env.APP.description
 				}
 			}
-		}),
-		VitePWA({
-			strategies: 'injectManifest',
-			injectRegister: null,
-			srcDir: 'public',
-			filename: 'sw.js'
 		}),
 		react({
 			include: '**/*.{jsx,tsx}'
