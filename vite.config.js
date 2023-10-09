@@ -1,7 +1,8 @@
+import fs from 'fs';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import { VitePWA } from 'vite-plugin-pwa';
 import react from '@vitejs/plugin-react';
-import fs from 'fs';
 
 import env from './environments/env.local';
 
@@ -49,6 +50,12 @@ export default defineConfig({
 		}),
 		react({
 			include: '**/*.{jsx,tsx}'
+		}),
+		VitePWA({
+			registerType: 'autoUpdate',
+			devOptions: {
+				enabled: true
+			}
 		})
 	],
 	server: {

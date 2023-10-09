@@ -23,12 +23,14 @@
 		"createLocalSsl": "node ./localSsl/create-local-ssl.js win",
 		"lint": "eslint . -c eslint.commit.js",
 		"lint-local": "eslint . -c eslint.local.js",
+		"generate-pwa-assets": "pwa-assets-generator",
 		"build": "vite build --emptyOutDir",
 		"watch": "vite serve --c vite.config.js",
 		"preview": "vite preview"
 	},
 	"devDependencies": {
 		"@eslint/js": "^8.45.0",
+		"@vite-pwa/assets-generator": "^0.0.10",
 		"@vitejs/plugin-react": "^4.0.3",
 		"eslint": "^8.0.1",
 		"eslint-plugin-react": "^7.33.0",
@@ -37,7 +39,8 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^14.0.1",
 		"vite": "^4.4.6",
-		"vite-plugin-html": "^3.2.0"
+		"vite-plugin-html": "^3.2.0",
+		"vite-plugin-pwa": "^0.16.5"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "^2.0.0",
