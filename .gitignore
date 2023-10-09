@@ -124,3 +124,6 @@ dist
 
 # SSL Certs
 *.pem
+
+# VitePWA
+dev-dist
