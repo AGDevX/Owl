@@ -125,5 +125,7 @@ dist
 # SSL
 *.pem
 
-# This should be built
+# These should be built
+src/public/error.html
+src/public/offline.html
 src/public/sw.js

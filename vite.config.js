@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { defineConfig } from 'vite';
+import copy from 'rollup-plugin-copy';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import react from '@vitejs/plugin-react';
 
@@ -27,7 +28,36 @@ export default defineConfig({
 		sourcemap: true
 	},
 	plugins: [
+		copy({
+			targets: [
+				{
+					src: './html-templates/offline.html',
+					dest: './src/public',
+					transform: (contents) =>
+						contents
+							.toString()
+							.replace(/<%= title %>/g, env.APP.name)
+							.replace(/<%= description %>/g, env.APP.description)
+				},
+				{
+					src: './html-templates/error.html',
+					dest: './src/public',
+					transform: (contents) =>
+						contents
+							.toString()
+							.replace(/<%= title %>/g, env.APP.name)
+							.replace(/<%= description %>/g, env.APP.description)
+				}
+			]
+		}),
 		createHtmlPlugin({
+			entry: 'index.jsx',
+			inject: {
+				data: {
+					title: env.APP.name,
+					description: env.APP.description
+				}
+			},
 			minify: {
 				collapseWhitespace: true,
 				keepClosingSlash: true,
@@ -37,13 +67,6 @@ export default defineConfig({
 				removeStyleLinkTypeAttributes: true,
 				useShortDoctype: true,
 				minifyCSS: true
-			},
-			entry: 'index.jsx',
-			inject: {
-				data: {
-					title: env.APP.name,
-					description: env.APP.description
-				}
 			}
 		}),
 		react({
