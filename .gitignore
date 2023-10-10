@@ -122,8 +122,8 @@ dist
 !.yarn/cache
 #.pnp.*
 
-# SSL Certs
+# SSL
 *.pem
 
-# VitePWA
-dev-dist
+# This should be built
+src/public/sw.js

@@ -1,7 +1,6 @@
 import fs from 'fs';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import { VitePWA } from 'vite-plugin-pwa';
 import react from '@vitejs/plugin-react';
 
 import env from './environments/env.local';
@@ -50,38 +49,6 @@ export default defineConfig({
 		}),
 		react({
 			include: '**/*.{jsx,tsx}'
-		}),
-		VitePWA({
-			registerType: 'autoUpdate',
-			devOptions: {
-				enabled: true
-			},
-			manifest: {
-				id: 'agdevx.owl',
-				name: 'Owl',
-				short_name: 'Owl',
-				description: 'React starter application',
-				start_url: '.',
-				orientation: 'any',
-				background_color: '#0083d7',
-				theme_color: '#0083d7',
-				display: 'standalone',
-				display_override: ['minimal-ui'],
-				icons: [
-					{
-						src: '/assets/logo.svg',
-						sizes: 'any',
-						type: 'image/svg+xml',
-						purpose: 'maskable any'
-					},
-					{
-						src: '/assets/logo.png',
-						sizes: '16x16 24x24 36x36 64x64 72x72 96x96 128x128 192x192 256x256 512x512',
-						type: 'image/png',
-						purpose: 'maskable any'
-					}
-				]
-			}
 		})
 	],
 	server: {

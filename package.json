@@ -23,12 +23,20 @@
 		"createLocalSsl": "node ./localSsl/create-local-ssl.js win",
 		"lint": "eslint . -c eslint.commit.js",
 		"lint-local": "eslint . -c eslint.local.js",
-		"build": "vite build --emptyOutDir",
-		"watch": "vite serve --c vite.config.js",
+		"buildServiceWorker": "rollup -c ./service-worker/rollup.sw.js",
+		"build": "yarn buildServiceWorker && vite build --emptyOutDir",
+		"watch": "yarn buildServiceWorker && vite serve --c vite.config.js",
 		"preview": "vite preview"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.0.0",
+		"@babel/preset-env": "^7.22.20",
 		"@eslint/js": "^8.45.0",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-commonjs": "^25.0.5",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-replace": "^5.0.3",
+		"@rollup/plugin-terser": "^0.4.4",
 		"@vitejs/plugin-react": "^4.0.3",
 		"eslint": "^8.0.1",
 		"eslint-plugin-react": "^7.33.0",
@@ -38,7 +46,9 @@
 		"lint-staged": "^14.0.1",
 		"vite": "^4.4.6",
 		"vite-plugin-html": "^3.2.0",
-		"vite-plugin-pwa": "^0.16.5"
+		"workbox-recipes": "^7.0.0",
+		"workbox-routing": "^7.0.0",
+		"workbox-strategies": "^7.0.0"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "^2.0.0",
