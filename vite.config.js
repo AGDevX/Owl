@@ -17,7 +17,6 @@ export default defineConfig({
 	},
 	build: {
 		outDir: '../dist',
-		assetsDir: '',
 		rollupOptions: {
 			output: {
 				entryFileNames: `app-${env.ENVIRONMENT.app}-[name]-[hash].js`,
