@@ -1,6 +1,6 @@
-const eslintConfig = require('./eslint.config');
+import eslintConfig from './eslint.config.js';
 
-module.exports = [
+export default [
 	...eslintConfig,
 	{
 		rules: {

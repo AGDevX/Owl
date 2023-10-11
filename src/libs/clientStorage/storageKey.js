@@ -1,5 +1,3 @@
-const StorageKey = Object.freeze({
+export const StorageKey = Object.freeze({
 	AuthNReturnRoute: 'authN-return-route'
 });
-
-export default StorageKey;

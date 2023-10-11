@@ -122,5 +122,10 @@ dist
 !.yarn/cache
 #.pnp.*
 
-# SSL Certs
+# SSL
 *.pem
+
+# These should be built
+src/public/error.html
+src/public/offline.html
+src/public/sw.js

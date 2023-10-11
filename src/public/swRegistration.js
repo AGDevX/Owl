@@ -25,9 +25,7 @@ export const unregisterServiceWorker = async () => {
 			const registration = await navigator.serviceWorker.getRegistration();
 			if (registration) {
 				const result = await registration.unregister();
-				console.debug(
-					result ? 'The service worker was unregistered' : 'The service worker could not be unregistered'
-				);
+				console.debug(result ? 'The service worker was unregistered' : 'The service worker could not be unregistered');
 			} else {
 				console.debug('There is no service worker to unregister');
 			}

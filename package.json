@@ -4,6 +4,7 @@
 	"description": "React starter / educational / inspirational application",
 	"keywords": [
 		"react",
+		"vite",
 		"owl",
 		"seed",
 		"template",
@@ -12,42 +13,44 @@
 	"author": "AGDevX",
 	"license": "MIT",
 	"private": true,
-	"packageManager": "yarn@3.3.1",
 	"engines": {
 		"node": ">=18",
-		"yarn": ">=3"
+		"yarn": ">=1"
 	},
+	"type": "module",
 	"scripts": {
 		"prepare": "husky install",
 		"createLocalSsl": "node ./localSsl/create-local-ssl.js win",
 		"lint": "eslint . -c eslint.commit.js",
-		"build": "webpack --config webpack.local.js",
-		"watch": "webpack serve --config webpack.local.js"
+		"lint-local": "eslint . -c eslint.local.js",
+		"buildServiceWorker": "rollup -c ./service-worker/rollup.sw.config.js",
+		"build": "yarn buildServiceWorker && vite build --c vite.local.config.js --emptyOutDir",
+		"watch": "yarn buildServiceWorker && vite serve --c vite.local.config.js",
+		"buildProd": "yarn buildServiceWorker && vite build --c vite.prod.config.js --emptyOutDir",
+		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.20.12",
-		"@babel/eslint-parser": "^7.19.1",
-		"@babel/plugin-proposal-export-default-from": "^7.18.10",
-		"@babel/preset-env": "^7.20.2",
-		"@babel/preset-react": "^7.18.6",
-		"@yarnpkg/sdks": "^3.0.0-rc.36",
-		"babel-loader": "^9.1.3",
-		"clean-webpack-plugin": "^4.0.0",
-		"copy-webpack-plugin": "^11.0.0",
-		"css-loader": "^6.8.1",
-		"eslint": "^8.45.0",
+		"@babel/core": "^7.0.0",
+		"@babel/preset-env": "^7.22.20",
+		"@eslint/js": "^8.45.0",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-commonjs": "^25.0.5",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-replace": "^5.0.3",
+		"@rollup/plugin-terser": "^0.4.4",
+		"@vitejs/plugin-react": "^4.0.3",
+		"eslint": "^8.0.1",
 		"eslint-plugin-react": "^7.33.0",
 		"globals": "^13.20.0",
 		"hostile": "^1.3.3",
-		"html-webpack-plugin": "^5.5.3",
 		"husky": "^8.0.3",
-		"lint-staged": "^13.2.3",
-		"style-loader": "^3.3.3",
-		"webpack": "^5.88.2",
-		"webpack-cli": "^5.1.4",
-		"webpack-dev-server": "^4.15.1",
-		"webpack-merge": "^5.9.0",
-		"workbox-webpack-plugin": "^7.0.0"
+		"lint-staged": "^14.0.1",
+		"rollup-plugin-copy": "^3.5.0",
+		"vite": "^4.4.6",
+		"vite-plugin-html": "^3.2.0",
+		"workbox-recipes": "^7.0.0",
+		"workbox-routing": "^7.0.0",
+		"workbox-strategies": "^7.0.0"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "^2.0.0",
@@ -57,7 +60,6 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-redux": "^8.1.1",
-		"react-router-dom": "^6.14.2",
-		"workbox-recipes": "^7.0.0"
+		"react-router-dom": "^6.14.2"
 	}
 }

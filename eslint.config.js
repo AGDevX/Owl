@@ -4,16 +4,16 @@
 //-- https://eslint.org/docs/latest/use/configure/configuration-files-new
 //-- https://eslint.org/blog/2022/08/new-config-system-part-2/
 
-const globals = require('globals');
-const babelParser = require('@babel/eslint-parser');
-const reactRecommended = require('eslint-plugin-react/configs/recommended');
-const reactJsxRuntime = require('eslint-plugin-react/configs/jsx-runtime');
+import globals from 'globals';
+import js from '@eslint/js';
+import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import reactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 
-module.exports = [
+export default [
 	{
 		ignores: ['**/*.pnp.loader.mjs']
 	},
-	'eslint:recommended',
+	js.configs.recommended,
 	reactRecommended,
 	reactJsxRuntime,
 	{
@@ -22,7 +22,6 @@ module.exports = [
 			...reactRecommended.languageOptions,
 			ecmaVersion: 'latest',
 			sourceType: 'module',
-			parser: babelParser,
 			parserOptions: {
 				requireConfigFile: true
 			},
