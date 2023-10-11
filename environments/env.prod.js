@@ -1,17 +1,17 @@
 const env = {
 	ENVIRONMENT: {
-		app: 'local',
-		node: 'development'
+		app: 'prod',
+		node: 'production'
 	},
 	HOST: {
-		provider: 'localhost',
-		name: 'owl-local.agdevx.com',
+		provider: 'server',
+		name: 'owl.agdevx.com',
 		port: 443,
 		https: true,
 		baseHref: '/' //-- Should be / if the application is hosted at the root of the (sub)domain
 	},
 	APP: {
-		name: 'Owl (local)',
+		name: 'Owl',
 		description: 'React starter / educational / inspirational application',
 		showReactRouterDomErrorPage: true,
 		enableServiceWorker: true,
@@ -23,8 +23,8 @@ const env = {
 	},
 	APIS: {
 		spider: {
-			baseUrl: 'https://localhost:7264',
-			audience: 'api://agdevx/spider-web-api/dev',
+			baseUrl: 'https://spider.agdevx.com',
+			audience: 'api://agdevx/spider-web-api/prod',
 			scopes: ['api:access']
 		},
 		jsonPlaceholder: {
@@ -36,18 +36,18 @@ const env = {
 		oidcScopes: ['openid', 'profile', 'email', 'offline_access'],
 		auth0: {
 			domain: 'agdevx.auth0.com',
-			clientId: 'xIWLicq70VulQHYmihep3KYRO8pTAISC',
-			signInRedirectUrl: 'https://owl-local.agdevx.com/auth-callback?auth-type=sign-in',
-			signOutRedirectUrl: 'https://owl-local.agdevx.com/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
+			clientId: 'KQFrJTkURY80tqWodMJAAiu9mgoKOMe8',
+			signInRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-in',
+			signOutRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
 		}
 	},
 	CLIENT_STORAGE: {
 		provider: 'localForage',
 		localForage: {
 			driver: 'asyncStorage', //-- localforage.INDEXEDDB
-			name: 'Owl.local',
+			name: 'Owl',
 			version: 1.0,
-			storeName: 'Owl.local',
+			storeName: 'Owl',
 			description: 'Client-side storage'
 		}
 	}

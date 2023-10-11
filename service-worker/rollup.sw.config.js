@@ -1,10 +1,8 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-import terser from '@rollup/plugin-terser';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-
-import env from '../environments/env.local.js';
+import terser from '@rollup/plugin-terser';
 
 export default {
 	input: 'service-worker/sw.js',
@@ -14,7 +12,7 @@ export default {
 	},
 	plugins: [
 		replace({
-			'process.env.NODE_ENV': JSON.stringify(env.ENVIRONMENT.node),
+			'process.env.NODE_ENV': JSON.stringify('production'),
 			preventAssignment: true
 		}),
 		nodeResolve({

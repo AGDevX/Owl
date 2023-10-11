@@ -23,9 +23,10 @@
 		"createLocalSsl": "node ./localSsl/create-local-ssl.js win",
 		"lint": "eslint . -c eslint.commit.js",
 		"lint-local": "eslint . -c eslint.local.js",
-		"buildServiceWorker": "rollup -c ./service-worker/rollup.sw.js",
-		"build": "yarn buildServiceWorker && vite build --emptyOutDir",
-		"watch": "yarn buildServiceWorker && vite serve --c vite.config.js",
+		"buildServiceWorker": "rollup -c ./service-worker/rollup.sw.config.js",
+		"build": "yarn buildServiceWorker && vite build --c vite.local.config.js --emptyOutDir",
+		"watch": "yarn buildServiceWorker && vite serve --c vite.local.config.js",
+		"buildProd": "yarn buildServiceWorker && vite build --c vite.prod.config.js --emptyOutDir",
 		"preview": "vite preview"
 	},
 	"devDependencies": {
