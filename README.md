@@ -9,21 +9,17 @@ If this is used as a basis for a new application then there's a little customiza
 # Features
 
 - Build & Dev
-  - yarn 2
-  - Webpack
-    - Chunking & cache busting
-    - Minify & uglify code
-  - Babel
+  - yarn
+  - Vite
   - ESLint (using "flat config")
   - Prettier
   - Husky githook integration
     - Linting of staged files prior to git comments
   - VSCode Workspace
 - Hosting
-  - Webpack DevServer
   - Local HTTPS
 - App
-  - Easy configuration per environment (even for Webpack config)
+  - Easy configuration per environment (even for Vite config)
   - Authentication via OIDC with Auth0 as a provider
     - Public & Private routes
   - API Authorization via OAuth 2.0 using Auth0 as a provider
