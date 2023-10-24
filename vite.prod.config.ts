@@ -49,7 +49,7 @@ export default mergeConfig(
 				]
 			}),
 			createHtmlPlugin({
-				entry: 'index.jsx',
+				entry: 'index.tsx',
 				inject: {
 					data: {
 						title: env.APP.name,
