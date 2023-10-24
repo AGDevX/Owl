@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
-import store from './state/redux/store';
+import { store } from './state/redux/store';
 import AuthNProvider from './auth/authN/AuthNProvider';
 import Layout from './structure/Layout';
 

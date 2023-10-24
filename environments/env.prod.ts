@@ -1,4 +1,6 @@
-const env = {
+import { IEnvironment } from './IEnvironment';
+
+const env: IEnvironment = {
 	ENVIRONMENT: {
 		app: 'prod',
 		node: 'production'
@@ -17,9 +19,15 @@ const env = {
 		enableServiceWorker: true,
 		autoSignIn: true
 	},
-	APP_INITIAL_STATE: {
-		counter: 12,
-		albums: []
+	AUTH: {
+		provider: 'auth0',
+		oidcScopes: ['openid', 'profile', 'email', 'offline_access'],
+		auth0: {
+			domain: 'agdevx.auth0.com',
+			clientId: 'KQFrJTkURY80tqWodMJAAiu9mgoKOMe8',
+			signInRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-in',
+			signOutRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
+		}
 	},
 	APIS: {
 		spider: {
@@ -31,15 +39,9 @@ const env = {
 			baseUrl: 'https://jsonplaceholder.typicode.com'
 		}
 	},
-	AUTH: {
-		provider: 'auth0',
-		oidcScopes: ['openid', 'profile', 'email', 'offline_access'],
-		auth0: {
-			domain: 'agdevx.auth0.com',
-			clientId: 'KQFrJTkURY80tqWodMJAAiu9mgoKOMe8',
-			signInRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-in',
-			signOutRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
-		}
+	APP_INITIAL_STATE: {
+		counter: 12,
+		albums: []
 	},
 	CLIENT_STORAGE: {
 		provider: 'localForage',

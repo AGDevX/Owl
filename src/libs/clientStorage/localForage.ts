@@ -1,21 +1,23 @@
-import localforage from 'localforage';
+import * as localforage from 'localforage';
+import { ILocalForageConfig } from '../../../environments/IConfig';
 
 //-- https://localforage.github.io/localForage/
 
-const useLocalForage = (config) => {
+const useLocalForage = (config: ILocalForageConfig) => {
 	var store = localforage.createInstance(config);
 
-	const get = async (key) => {
+	const get = async (key: string): Promise<string | undefined> => {
 		try {
-			let item = await store.getItem(key);
-			item = JSON.parse(item);
+			const itemStr = await store.getItem<string>(key);
+			const item = JSON.parse(itemStr!);
 			return item;
 		} catch (err) {
 			console.log(err);
 		}
+		return undefined;
 	};
 
-	const set = async (key, value) => {
+	const set = async (key: string, value: string): Promise<string | undefined> => {
 		try {
 			//-- localForage is having trouble serializing objects, so we'll do it
 			value = JSON.stringify(value);
@@ -28,7 +30,7 @@ const useLocalForage = (config) => {
 		return item;
 	};
 
-	const remove = async (key) => {
+	const remove = async (key: string): Promise<void> => {
 		try {
 			await store.removeItem(key);
 		} catch (err) {
@@ -44,15 +46,17 @@ const useLocalForage = (config) => {
 		}
 	};
 
-	const key = async (index) => {
+	const key = async (index: number): Promise<string | undefined> => {
 		try {
 			return index >= 0 ? await store.key(index) : undefined;
 		} catch (err) {
 			console.log(err);
 		}
+
+		return undefined;
 	};
 
-	const keys = async () => {
+	const keys = async (): Promise<ReadonlyArray<string> | undefined> => {
 		try {
 			return await store.keys();
 		} catch (err) {
@@ -60,7 +64,7 @@ const useLocalForage = (config) => {
 		}
 	};
 
-	const length = async () => {
+	const length = async (): Promise<number | undefined> => {
 		try {
 			return await store.length();
 		} catch (err) {

@@ -4,7 +4,7 @@ import userReducer from './slices/userSlice';
 import counterReducer from './slices/counterSlice';
 import albumReducer from './slices/albumSlice';
 
-export default configureStore({
+export const store = configureStore({
 	reducer: {
 		appConfig: appConfigReducer,
 		user: userReducer,
@@ -12,3 +12,6 @@ export default configureStore({
 		albums: albumReducer
 	}
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
