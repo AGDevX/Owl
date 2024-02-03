@@ -1,5 +1,3 @@
-const NotFound = () => {
+export const NotFound = (): React.ReactNode => {
 	return <h1>404</h1>;
 };
-
-export default NotFound;

@@ -1,19 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { UserInfo } from '../apis/spider-api/UserInfo';
+import { useAppDispatch } from '../state/redux/store';
+import { getInfo, useUserSelector } from '../state/redux/userSlice';
 
-import { getInfo } from '../state/redux/thunks/userThunk';
+export const useUserService = () => {
+	const dispatch = useAppDispatch();
+	const userInfo = useUserSelector((state) => state.user.value);
 
-const useUserService = () => {
-	const dispatch = useDispatch();
-	const userInfo = useSelector((state) => state.user.value);
-
-	const getUserInfo = async (email = null, ignoreCache = false) => {
+	const getUserInfo = async (email: string | null = null, ignoreCache: boolean = false): Promise<UserInfo | null> => {
 		if (userInfo && userInfo.user.email === email && !ignoreCache) {
 			return userInfo;
 		}
 
 		if (email) {
-			var userInfo = await dispatch(getInfo(email));
-			return userInfo.payload?.data.value;
+			var user = await dispatch(getInfo(email));
+			return user.payload as UserInfo;
 		}
 
 		return null;
@@ -24,5 +24,3 @@ const useUserService = () => {
 		getUserInfo
 	};
 };
-
-export default useUserService;

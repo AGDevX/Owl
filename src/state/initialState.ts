@@ -1,8 +1,6 @@
 import { IEnvironment } from '../../environments/IConfig';
 
-const initialState: IEnvironment = {
+export const InitialState: IEnvironment = {
 	// @ts-ignore
 	...env
 };
-
-export default initialState;

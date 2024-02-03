@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-const FooBar = () => {
+export const FooBar = (): React.ReactNode => {
 	return (
 		<>
 			<h1>FooBar</h1>
@@ -8,5 +8,3 @@ const FooBar = () => {
 		</>
 	);
 };
-
-export default FooBar;

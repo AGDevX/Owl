@@ -1,4 +1,4 @@
-import { IEnvironment } from './IEnvironment';
+import { IEnvironment } from './IConfig';
 
 const env: IEnvironment = {
 	ENVIRONMENT: {
@@ -15,7 +15,6 @@ const env: IEnvironment = {
 	APP: {
 		name: 'Owl',
 		description: 'React starter / educational / inspirational application',
-		showReactRouterDomErrorPage: true,
 		enableServiceWorker: true,
 		autoSignIn: true
 	},
@@ -26,7 +25,7 @@ const env: IEnvironment = {
 			domain: 'agdevx.auth0.com',
 			clientId: 'KQFrJTkURY80tqWodMJAAiu9mgoKOMe8',
 			signInRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-in',
-			signOutRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-out' //-- Must be set in Auth0 site
+			signOutRedirectUrl: 'https://owl.agdevx.com/auth-callback?auth-type=sign-out' //-- Must be set in Auth0
 		}
 	},
 	APIS: {

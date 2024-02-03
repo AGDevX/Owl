@@ -1,11 +1,6 @@
-import { TypedUseSelectorHook, useSelector } from 'react-redux';
-import type { RootState } from '../state/redux/store';
+import { useAppConfigSelector } from '../state/redux/appConfigSlice';
 
-const useAppConfigSelector: TypedUseSelectorHook<RootState> = useSelector;
-
-const useAppConfig = () => {
+export const useAppConfig = () => {
 	const appConfig = useAppConfigSelector((state) => state.appConfig);
 	return appConfig;
 };
-
-export default useAppConfig;

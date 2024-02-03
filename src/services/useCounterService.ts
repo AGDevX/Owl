@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment, useCounterSelector } from '../state/redux/counterSlice';
+import { useAppDispatch } from '../state/redux/store';
 
-import { increment, decrement } from '../state/redux/slices/counterSlice';
+export const useCounterService = () => {
+	const dispatch = useAppDispatch();
 
-const useCounterService = () => {
-	const dispatch = useDispatch();
-	const count = useSelector((state) => state.counter.value);
+	const count = useCounterSelector((state) => state.counter.value);
 
 	const incrementCounter = () => {
 		dispatch(increment());
@@ -20,5 +20,3 @@ const useCounterService = () => {
 		decrementCounter
 	};
 };
-
-export default useCounterService;

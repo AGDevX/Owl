@@ -1,20 +1,18 @@
 import { Provider } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
+import { AuthNContext } from './auth/AuthNContext';
 import { store } from './state/redux/store';
-import AuthNProvider from './auth/authN/AuthNProvider';
-import Layout from './structure/Layout';
+import { Layout } from './structure/Layout';
 
-const App = () => {
+export const App = () => {
 	return (
 		<Provider store={store}>
-			<AuthNProvider>
+			<AuthNContext>
 				<Layout>
 					<Outlet />
 				</Layout>
-			</AuthNProvider>
+			</AuthNContext>
 		</Provider>
 	);
 };
-
-export default App;

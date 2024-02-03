@@ -1,15 +1,17 @@
-import RouteType from './routeType';
-import UserInfo from '../content/UserInfo';
+import { User } from '../content/User';
 
-export default [
+import { AppRouteType } from './AppRouteType';
+import { IAppRoute } from './IAppRoute';
+
+export const userRoutes: ReadonlyArray<IAppRoute> = [
 	{
-		id: 'UserInfo',
-		name: 'UserInfo',
+		id: 'User',
+		name: 'User',
 		enabled: true,
 		private: true,
-		type: RouteType.Content,
-		path: '/user-info',
-		element: <UserInfo />,
+		type: AppRouteType.Content,
+		path: '/user',
+		element: <User />,
 		children: []
 	}
 ];

@@ -1,13 +1,15 @@
-import RouteType from './routeType';
-import Counter from '../content/Counter';
+import { Counter } from '../content/Counter';
 
-export default [
+import { AppRouteType } from './AppRouteType';
+import { IAppRoute } from './IAppRoute';
+
+export const counterRoutes: ReadonlyArray<IAppRoute> = [
 	{
 		id: 'counter',
 		name: 'Counter',
 		enabled: true,
 		private: false,
-		type: RouteType.Content,
+		type: AppRouteType.Content,
 		path: '/counter',
 		element: <Counter />,
 		children: []

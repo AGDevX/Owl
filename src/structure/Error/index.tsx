@@ -1,4 +1,4 @@
-const Error = () => {
+export const Error = (): React.ReactNode => {
 	return (
 		<>
 			<h1>Dang!</h1>
@@ -6,5 +6,3 @@ const Error = () => {
 		</>
 	);
 };
-
-export default Error;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import useRouting from '../routing/useRouting';
+import { useRoutingService } from '../routing/useRoutingService';
 
-const NavBar = () => {
-	const { allRoutes } = useRouting();
+export const NavBar = (): React.ReactNode => {
+	const { allRoutes } = useRoutingService();
 
 	return (
 		<>
@@ -19,5 +19,3 @@ const NavBar = () => {
 		</>
 	);
 };
-
-export default NavBar;

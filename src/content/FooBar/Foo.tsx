@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-const Foo = () => {
+export const Foo = (): React.ReactNode => {
 	return (
 		<>
 			<h1>Foo</h1>
@@ -8,5 +8,3 @@ const Foo = () => {
 		</>
 	);
 };
-
-export default Foo;

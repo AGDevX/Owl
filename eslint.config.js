@@ -1,15 +1,13 @@
 //-- This new config works with ES Lint, but it doesn't integrate well with the ES Lint extension yet
 //--	Don't use this until it matures. Keep as reference.
-
 //-- https://eslint.org/docs/latest/use/configure/configuration-files-new
 //-- https://eslint.org/blog/2022/08/new-config-system-part-2/
-
-import globals from 'globals';
 import js from '@eslint/js';
-import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
-import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import tsParser from '@typescript-eslint/parser';
 import reactJsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
+import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import globals from 'globals';
 
 export default [
 	{
@@ -67,5 +65,26 @@ export default [
 				env: 'readonly'
 			}
 		}
+	},
+	{
+		rules: {
+			// 'no-restricted-imports': 'off'
+			// '@typescript-eslint/no-restricted-imports': [
+			// 	'warn',
+			// 	{
+			// 		name: 'react-redux',
+			// 		importNames: ['useSelector', 'useDispatch'],
+			// 		message: 'Use typed hooks `useAppDispatch` and `useAppSelector` instead.'
+			// 	}
+			// ]
+		}
+		// overrides: [
+		// 	{
+		// 		files: ['*Slice.ts'],
+		// 		rules: {
+		// 			'@typescript-eslint/no-restricted-imports': 'off'
+		// 		}
+		// 	}
+		// ]
 	}
 ];

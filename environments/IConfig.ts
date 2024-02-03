@@ -40,16 +40,15 @@ interface IApiConfig {
 
 interface IAppInitialStateConfig {
 	counter: number;
-	albums: ReadonlyArray<string>;
 }
 
 interface IAuthConfig {
 	provider: string;
-	oidcScopes: ReadonlyArray<string>;
-	auth0: IOAuth2Config;
+	oidcScopes: Array<string>;
+	auth0: IAuthProviderConfig;
 }
 
-interface IOAuth2Config {
+export interface IAuthProviderConfig {
 	domain: string;
 	clientId: string;
 	signInRedirectUrl: string;

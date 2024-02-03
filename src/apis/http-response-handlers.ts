@@ -1,9 +1,11 @@
-export const handleHttpResponse = async (httpResponse) => {
-	let responseData;
+import { AppHttpResponse } from './AppHttpResponse';
+
+export const handleHttpResponse = async <T>(httpResponse: Response) => {
+	let responseData: any | null | undefined;
 
 	const contentType = httpResponse.headers.get('content-type');
 
-	if (contentType.includes('application/json')) {
+	if (contentType && contentType.includes('application/json')) {
 		try {
 			responseData = await httpResponse.json();
 		} catch {
@@ -21,25 +23,20 @@ export const handleHttpResponse = async (httpResponse) => {
 		console.error(responseData || 'Error returned from the HTTP request');
 	}
 
-	const headers = [];
-	httpResponse.headers.forEach(function (value, key) {
-		headers.push({ key, value });
-	});
-
-	const response = {
+	const response: AppHttpResponse<T> = {
 		isOk: httpResponse.ok,
 		statusCode: httpResponse.status,
 		statusText: httpResponse.statusText,
 		type: httpResponse.type,
 		redirected: httpResponse.redirected,
 		url: httpResponse.url,
-		headers,
-		data: responseData
+		headers: httpResponse.headers,
+		data: responseData as T
 	};
 
 	return response;
 };
 
-export const handleHttpError = (error) => {
-	throw Error(`Http call failed: ${JSON.stringify(error)}`);
+export const handleNetworkError = (error: any) => {
+	throw Error(`Http call failed due to network issue: ${JSON.stringify(error)}`);
 };

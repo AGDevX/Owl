@@ -1,8 +1,11 @@
+import { useDispatch } from 'react-redux';
+
 import { configureStore } from '@reduxjs/toolkit';
-import appConfigReducer from './slices/appConfigSlice';
-import userReducer from './slices/userSlice';
-import counterReducer from './slices/counterSlice';
-import albumReducer from './slices/albumSlice';
+
+import albumReducer from './albumSlice';
+import appConfigReducer from './appConfigSlice';
+import counterReducer from './counterSlice';
+import userReducer from './userSlice';
 
 export const store = configureStore({
 	reducer: {
@@ -15,3 +18,4 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch: () => AppDispatch = useDispatch;

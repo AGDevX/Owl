@@ -1,16 +1,18 @@
-import RouteType from './routeType';
-import SignIn from '../auth/authN/components/SignIn';
-import SignOut from '../auth/authN/components/SignOut';
-import AuthCallback from '../auth/authN/components/AuthCallback';
-import ConsentRequired from '../auth/authN/components/ConsentRequired';
+import { AuthCallback } from '../auth/components/AuthCallback';
+import { ConsentRequired } from '../auth/components/ConsentRequired';
+import { SignIn } from '../auth/components/SignIn';
+import { SignOut } from '../auth/components/SignOut';
 
-export default [
+import { AppRouteType } from './AppRouteType';
+import { IAppRoute } from './IAppRoute';
+
+export const authRoutes: ReadonlyArray<IAppRoute> = [
 	{
 		id: 'sign-in',
 		name: 'Sign In',
 		enabled: true,
 		private: false,
-		type: RouteType.SignIn,
+		type: AppRouteType.SignIn,
 		path: '/sign-in',
 		element: <SignIn />,
 		children: []
@@ -20,7 +22,7 @@ export default [
 		name: 'Log In',
 		enabled: true,
 		private: false,
-		type: RouteType.SignIn,
+		type: AppRouteType.SignIn,
 		path: '/log-in',
 		element: <SignIn />,
 		children: []
@@ -30,7 +32,7 @@ export default [
 		name: 'Sign Out',
 		enabled: true,
 		private: false,
-		type: RouteType.SignOut,
+		type: AppRouteType.SignOut,
 		path: '/sign-out',
 		element: <SignOut />,
 		children: []
@@ -40,7 +42,7 @@ export default [
 		name: 'Log Out',
 		enabled: true,
 		private: false,
-		type: RouteType.SignOut,
+		type: AppRouteType.SignOut,
 		path: '/log-out',
 		element: <SignOut />,
 		children: []
@@ -50,7 +52,7 @@ export default [
 		name: 'Auth Callback',
 		enabled: true,
 		private: false, //-- setting this to true will result in sign-in redirect loops
-		type: RouteType.AuthCallback,
+		type: AppRouteType.AuthCallback,
 		path: '/auth-callback',
 		element: <AuthCallback />,
 		children: []
@@ -60,7 +62,7 @@ export default [
 		name: 'Consent Required',
 		enabled: true,
 		private: true,
-		type: RouteType.ConsentRequired,
+		type: AppRouteType.ConsentRequired,
 		path: '/consent-required',
 		element: <ConsentRequired />,
 		children: []

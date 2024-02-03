@@ -1,15 +1,17 @@
-import RouteType from './routeType';
-import FooBar from '../content/FooBar';
-import Foo from '../content/Foobar/Foo';
-import Bar from '../content/Foobar/Bar';
+import { FooBar } from '../content/FooBar';
+import { Bar } from '../content/FooBar/Bar';
+import { Foo } from '../content/FooBar/Foo';
 
-export default [
+import { AppRouteType } from './AppRouteType';
+import { IAppRoute } from './IAppRoute';
+
+export const fooBarRoutes: ReadonlyArray<IAppRoute> = [
 	{
 		id: 'foo-bar',
 		name: 'FooBar',
 		enabled: true,
 		private: false,
-		type: RouteType.Content,
+		type: AppRouteType.Content,
 		path: '/foobar',
 		element: <FooBar />,
 		children: [
@@ -18,7 +20,7 @@ export default [
 				name: 'Foo',
 				enabled: true,
 				private: true,
-				type: RouteType.Content,
+				type: AppRouteType.Content,
 				path: 'foo',
 				element: <Foo />,
 				children: [
@@ -27,7 +29,7 @@ export default [
 						name: 'Bar',
 						enabled: true,
 						private: false,
-						type: RouteType.Content,
+						type: AppRouteType.Content,
 						path: 'bar',
 						element: <Bar />,
 						children: []

@@ -1,7 +1,8 @@
-import useCounterService from '../../services/useCounterService';
+import { useCounterService } from '../../services/useCounterService';
+
 import './styles.css';
 
-const Counter = () => {
+export const Counter = (): React.ReactNode => {
 	const { count, decrementCounter, incrementCounter } = useCounterService();
 
 	return (
@@ -18,5 +19,3 @@ const Counter = () => {
 		</div>
 	);
 };
-
-export default Counter;

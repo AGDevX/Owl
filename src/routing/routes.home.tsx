@@ -1,13 +1,15 @@
-import RouteType from './routeType';
-import Home from '../content/Home';
+import { Home } from '../content/Home';
 
-export default [
+import { AppRouteType } from './AppRouteType';
+import { IAppRoute } from './IAppRoute';
+
+export const homeRoutes: ReadonlyArray<IAppRoute> = [
 	{
 		id: 'home-1',
 		name: 'Home',
 		enabled: true,
 		private: false,
-		type: RouteType.Home,
+		type: AppRouteType.Home,
 		path: '/',
 		element: <Home />,
 		children: [],
@@ -21,7 +23,7 @@ export default [
 		name: 'Home',
 		enabled: true,
 		private: true,
-		type: RouteType.Home,
+		type: AppRouteType.Home,
 		path: '/home',
 		element: <Home />,
 		children: []

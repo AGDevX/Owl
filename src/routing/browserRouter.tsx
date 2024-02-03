@@ -1,12 +1,12 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
+import { App } from '../App';
+import { PrivateRoute } from '../auth/components/PrivateRoute';
+import { PublicRoute } from '../auth/components/PublicRoute';
+import { Error } from '../structure/Error';
+
+import { IAppRoute } from './IAppRoute';
 import { allRoutes } from './routes';
-import PrivateRoute from '../auth/authN/components/PrivateRoute';
-import PublicRoute from '../auth/authN/components/PublicRoute';
-import App from '../App';
-import Error from '../structure/Error';
-
-const showReactRouterDomErrorPage = env.APP.showReactRouterDomErrorPage;
 
 //-- Public parent route / Private child route
 //--	No authentication required to visit the parent route
@@ -16,41 +16,17 @@ const showReactRouterDomErrorPage = env.APP.showReactRouterDomErrorPage;
 //--	Authentication required to visit the parent route
 //--	Authentication required to visit the child route
 
-const getErrorElement = (route) => {
-	if (showReactRouterDomErrorPage) {
-		return null;
-	}
-
-	const errorElement = route.errorElement;
-	return errorElement ? errorElement : null;
-};
-
-const getLoader = (route) => {
-	const loader = route.loader;
-	return loader ? loader : null;
-};
-
-const renderRoutes = (routes) => {
-	return routes.map((route) =>
-		route.children && route.children.length ? (
-			<Route key={route.id} element={route.private ? <PrivateRoute /> : <PublicRoute />}>
-				<Route
-					path={route.path}
-					element={route.element}
-					errorElement={getErrorElement(route)}
-					loader={getLoader(route)}
-				>
-					{renderRoutes(route.children)}
+const renderRoutes = (appRoutes: ReadonlyArray<IAppRoute>): ReadonlyArray<React.ReactNode> => {
+	return appRoutes.map((appRoute: IAppRoute) =>
+		appRoute.children && appRoute.children.length ? (
+			<Route key={appRoute.id} element={appRoute.private ? <PrivateRoute /> : <PublicRoute />}>
+				<Route path={appRoute.path} element={appRoute.element} errorElement={appRoute.errorElement ?? <Error />} loader={appRoute.loader}>
+					{renderRoutes(appRoute.children)}
 				</Route>
 			</Route>
 		) : (
-			<Route key={route.id} element={route.private ? <PrivateRoute /> : <PublicRoute />}>
-				<Route
-					path={route.path}
-					element={route.element}
-					errorElement={getErrorElement(route)}
-					loader={getLoader(route)}
-				/>
+			<Route key={appRoute.id} element={appRoute.private ? <PrivateRoute /> : <PublicRoute />}>
+				<Route path={appRoute.path} element={appRoute.element} errorElement={appRoute.errorElement ?? <Error />} loader={appRoute.loader} />
 			</Route>
 		)
 	);
@@ -58,7 +34,7 @@ const renderRoutes = (routes) => {
 
 export default createBrowserRouter(
 	createRoutesFromElements(
-		<Route element={<App />} errorElement={showReactRouterDomErrorPage ? undefined : <Error />}>
+		<Route path='/' element={<App />} errorElement={<Error />}>
 			{renderRoutes(allRoutes)}
 		</Route>
 	)

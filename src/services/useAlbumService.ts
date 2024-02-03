@@ -1,19 +1,22 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-import { get, remove } from '../state/redux/thunks/albumThunk';
+import { get, remove, useAlbumSelector } from '../state/redux/albumSlice';
+import { useAppDispatch } from '../state/redux/store';
 
-const useAlbumService = () => {
-	const dispatch = useDispatch();
-	const albums = useSelector((state) => state.albums.value);
+export const useAlbumService = () => {
+	const dispatch = useAppDispatch();
+	const albums = useAlbumSelector((state) => state.albums.value);
 
-	const getAlbums = async (id = null) => {
+	useEffect(() => {
+		// console.log(albums);
+	}, [albums]);
+
+	const getAlbums = async (id: number | null = null) => {
 		await dispatch(get(id));
 	};
 
-	const removeAlbum = (id) => {
-		if (id && albums && albums.length > 0) {
-			dispatch(remove(id));
-		}
+	const removeAlbum = (id: number) => {
+		dispatch(remove(id));
 	};
 
 	return {
@@ -22,5 +25,3 @@ const useAlbumService = () => {
 		removeAlbum
 	};
 };
-
-export default useAlbumService;
