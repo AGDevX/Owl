@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useRoutingService } from '../routing/useRoutingService';
+import { useRoutingService } from 'routing/useRoutingService';
 
 export const NavBar = (): React.ReactNode => {
 	const { allRoutes } = useRoutingService();

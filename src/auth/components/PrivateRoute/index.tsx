@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { useAuthService } from '../../useAuthService';
+import { useAuthService } from 'auth/useAuthService';
 
 export const PrivateRoute = (): React.ReactNode => {
 	const { isAuthenticated, isAuthenticating, signIn, setAuthReturnRoute } = useAuthService();

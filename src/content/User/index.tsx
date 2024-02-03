@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { UserInfo } from '../../apis/spider-api/UserInfo';
-import { useUserService } from '../../services/userUserService';
+import { UserInfo } from 'apis/spider-api/UserInfo';
+
+import { useUserService } from 'services/userUserService';
 
 export const User = () => {
 	const [apiUserInfo, setApiUserInfo] = useState<UserInfo | null>(null);

@@ -1,6 +1,7 @@
-import { StorageKey, useClientStorage } from '../libs/clientStorage/useClientStorage';
-import { IAppRoute } from '../routing/IAppRoute';
-import { useRoutingService } from '../routing/useRoutingService';
+import { IAppRoute } from 'routing/IAppRoute';
+import { useRoutingService } from 'routing/useRoutingService';
+
+import { StorageKey, useClientStorage } from 'libs/clientStorage/useClientStorage';
 
 import { IAuth } from './IAuth';
 import { useAuthProvider } from './useAuthProvider';

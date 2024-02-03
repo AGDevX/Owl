@@ -1,4 +1,4 @@
-import { Counter } from '../content/Counter';
+import { Counter } from 'content/Counter';
 
 import { AppRouteType } from './AppRouteType';
 import { IAppRoute } from './IAppRoute';

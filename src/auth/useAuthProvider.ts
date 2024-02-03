@@ -1,4 +1,4 @@
-import { useAppConfig } from '../services/useAppConfig';
+import { useAppConfig } from 'services/useAppConfig';
 
 import { IAuth } from './IAuth';
 import { useAuthZeroService } from './providers/authZero/useAuthZeroService';

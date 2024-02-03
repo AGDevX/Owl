@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Navigate, useSearchParams } from 'react-router-dom';
 
-import { IAppRoute } from '../../../routing/IAppRoute';
-import { AuthType } from '../../AuthType';
-import { useAuthService } from '../../useAuthService';
+import { IAppRoute } from 'routing/IAppRoute';
+
+import { AuthType } from 'auth/AuthType';
+import { useAuthService } from 'auth/useAuthService';
 
 export const AuthCallback = (): React.ReactNode => {
 	const [returnRoute, setReturnRoute] = useState<IAppRoute | undefined>(undefined);

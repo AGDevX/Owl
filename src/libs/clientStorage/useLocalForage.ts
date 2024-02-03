@@ -1,6 +1,6 @@
 import * as localforage from 'localforage';
 
-import { ILocalForageConfig } from '../../../environments/IConfig';
+import { ILocalForageConfig } from 'environments/IConfig';
 
 //-- https://localforage.github.io/localForage/
 

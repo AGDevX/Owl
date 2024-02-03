@@ -1,6 +1,6 @@
-import { FooBar } from '../content/FooBar';
-import { Bar } from '../content/FooBar/Bar';
-import { Foo } from '../content/FooBar/Foo';
+import { FooBar } from 'content/FooBar';
+import { Bar } from 'content/FooBar/Bar';
+import { Foo } from 'content/FooBar/Foo';
 
 import { AppRouteType } from './AppRouteType';
 import { IAppRoute } from './IAppRoute';

@@ -5,9 +5,10 @@ import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { Album } from '../../apis/json-placeholder-api/Album';
-import { getAlbums } from '../../apis/json-placeholder-api/json-placeholder-api';
-import { StateStatus, StateStatusType } from '../StateStatus';
+import { StateStatus, StateStatusType } from 'state/StateStatus';
+
+import { Album } from 'apis/json-placeholder-api/Album';
+import { getAlbums } from 'apis/json-placeholder-api/json-placeholder-api';
 
 import type { RootState } from './store';
 

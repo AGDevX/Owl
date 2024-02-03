@@ -1,5 +1,5 @@
-import { AppHttpResponse } from '../AppHttpResponse';
-import { handleHttpResponse, handleNetworkError } from '../http-response-handlers';
+import { AppHttpResponse } from 'apis/AppHttpResponse';
+import { handleHttpResponse, handleNetworkError } from 'apis/http-response-handlers';
 
 import { Album } from './Album';
 

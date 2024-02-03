@@ -1,5 +1,5 @@
-import { decrement, increment, useCounterSelector } from '../state/redux/counterSlice';
-import { useAppDispatch } from '../state/redux/store';
+import { decrement, increment, useCounterSelector } from 'state/redux/counterSlice';
+import { useAppDispatch } from 'state/redux/store';
 
 export const useCounterService = () => {
 	const dispatch = useAppDispatch();

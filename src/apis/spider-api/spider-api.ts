@@ -1,6 +1,7 @@
-import { accessTokenRetriever } from '../../auth/accessTokenRetriever';
-import { AppHttpResponse } from '../AppHttpResponse';
-import { handleHttpResponse, handleNetworkError } from '../http-response-handlers';
+import { AppHttpResponse } from 'apis/AppHttpResponse';
+import { handleHttpResponse, handleNetworkError } from 'apis/http-response-handlers';
+
+import { accessTokenRetriever } from 'auth/accessTokenRetriever';
 
 import { SpiderApiResponse } from './SpiderApiResponse';
 import { UserInfo } from './UserInfo';

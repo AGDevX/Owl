@@ -1,5 +1,5 @@
-import { Error } from '../structure/Error';
-import { NotFound } from '../structure/NotFound';
+import { Error } from 'structure/Error';
+import { NotFound } from 'structure/NotFound';
 
 import { AppRouteType } from './AppRouteType';
 import { IAppRoute } from './IAppRoute';

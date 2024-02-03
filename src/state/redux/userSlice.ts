@@ -2,9 +2,10 @@ import { TypedUseSelectorHook, useSelector } from 'react-redux';
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { UserInfo } from '../../apis/spider-api/UserInfo';
-import { getUserInfo } from '../../apis/spider-api/spider-api';
-import { StateStatus, StateStatusType } from '../StateStatus';
+import { StateStatus, StateStatusType } from 'state/StateStatus';
+
+import { UserInfo } from 'apis/spider-api/UserInfo';
+import { getUserInfo } from 'apis/spider-api/spider-api';
 
 import type { RootState } from './store';
 

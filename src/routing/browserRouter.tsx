@@ -1,9 +1,11 @@
 import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
+import { PrivateRoute } from 'auth/components/PrivateRoute';
+import { PublicRoute } from 'auth/components/PublicRoute';
+
+import { Error } from 'structure/Error';
+
 import { App } from '../App';
-import { PrivateRoute } from '../auth/components/PrivateRoute';
-import { PublicRoute } from '../auth/components/PublicRoute';
-import { Error } from '../structure/Error';
 
 import { IAppRoute } from './IAppRoute';
 import { allRoutes } from './routes';

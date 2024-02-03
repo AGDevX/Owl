@@ -1,7 +1,7 @@
-import { AuthCallback } from '../auth/components/AuthCallback';
-import { ConsentRequired } from '../auth/components/ConsentRequired';
-import { SignIn } from '../auth/components/SignIn';
-import { SignOut } from '../auth/components/SignOut';
+import { AuthCallback } from 'auth/components/AuthCallback';
+import { ConsentRequired } from 'auth/components/ConsentRequired';
+import { SignIn } from 'auth/components/SignIn';
+import { SignOut } from 'auth/components/SignOut';
 
 import { AppRouteType } from './AppRouteType';
 import { IAppRoute } from './IAppRoute';

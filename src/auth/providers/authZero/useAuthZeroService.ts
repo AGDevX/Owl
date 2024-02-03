@@ -1,10 +1,12 @@
 import { useAuth0 } from '@auth0/auth0-react';
 
-import { IAuthProviderConfig } from '../../../../environments/IConfig';
-import { useRoutingService } from '../../../routing/useRoutingService';
-import { IAuth } from '../../IAuth';
-import { IOidcUser } from '../../IOidcUser';
-import { accessTokenRetriever } from '../../accessTokenRetriever';
+import { IAuthProviderConfig } from 'environments/IConfig';
+
+import { useRoutingService } from 'routing/useRoutingService';
+
+import { IAuth } from 'auth/IAuth';
+import { IOidcUser } from 'auth/IOidcUser';
+import { accessTokenRetriever } from 'auth/accessTokenRetriever';
 
 export const useAuthZeroService = ({ oidcScopes, auth0 }: useAuthZeroServiceProps): IAuth => {
 	const { user, isAuthenticated, isLoading, loginWithRedirect, logout, getAccessTokenSilently, getAccessTokenWithPopup } = useAuth0();

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { get, remove, useAlbumSelector } from '../state/redux/albumSlice';
-import { useAppDispatch } from '../state/redux/store';
+import { get, remove, useAlbumSelector } from 'state/redux/albumSlice';
+import { useAppDispatch } from 'state/redux/store';
 
 export const useAlbumService = () => {
 	const dispatch = useAppDispatch();

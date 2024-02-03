@@ -1,4 +1,4 @@
-import { useAppConfig } from '../../services/useAppConfig';
+import { useAppConfig } from 'services/useAppConfig';
 
 import { useLocalForage } from './useLocalForage';
 

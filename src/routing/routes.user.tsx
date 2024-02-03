@@ -1,4 +1,4 @@
-import { User } from '../content/User';
+import { User } from 'content/User';
 
 import { AppRouteType } from './AppRouteType';
 import { IAppRoute } from './IAppRoute';

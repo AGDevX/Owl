@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
-import { IAppRoute } from '../../../routing/IAppRoute';
-import { useAppConfig } from '../../../services/useAppConfig';
-import { useAuthService } from '../../useAuthService';
+import { IAppRoute } from 'routing/IAppRoute';
+
+import { useAuthService } from 'auth/useAuthService';
+
+import { useAppConfig } from 'services/useAppConfig';
 
 export const SignIn = (): React.ReactNode => {
 	const [returnRoute, setReturnRoute] = useState<IAppRoute | undefined>(undefined);

@@ -1,4 +1,4 @@
-import { Home } from '../content/Home';
+import { Home } from 'content/Home';
 
 import { AppRouteType } from './AppRouteType';
 import { IAppRoute } from './IAppRoute';

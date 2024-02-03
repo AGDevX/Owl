@@ -1,6 +1,7 @@
-import { UserInfo } from '../apis/spider-api/UserInfo';
-import { useAppDispatch } from '../state/redux/store';
-import { getInfo, useUserSelector } from '../state/redux/userSlice';
+import { useAppDispatch } from 'state/redux/store';
+import { getInfo, useUserSelector } from 'state/redux/userSlice';
+
+import { UserInfo } from 'apis/spider-api/UserInfo';
 
 export const useUserService = () => {
 	const dispatch = useAppDispatch();

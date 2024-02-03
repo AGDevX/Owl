@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-import { useAuthService } from '../../auth/useAuthService';
-import { useAlbumService } from '../../services/useAlbumService';
-import { useAppConfig } from '../../services/useAppConfig';
+import { useAuthService } from 'auth/useAuthService';
+
+import { useAlbumService } from 'services/useAlbumService';
+import { useAppConfig } from 'services/useAppConfig';
 
 import './styles.css';
 
