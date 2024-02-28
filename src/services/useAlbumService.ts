@@ -1,4 +1,4 @@
-import { useDeleteAlbumMutation, useLazyGetAlbumsQuery } from 'apis/json-placeholder-api/albums-api';
+import { useDeleteAlbumMutation, useLazyGetAlbumsQuery } from 'apis/json-placeholder-api/albums';
 
 export const useAlbumService = () => {
 	const [callGetAlbums, { data }] = useLazyGetAlbumsQuery();
