@@ -1,27 +1,21 @@
-import { useEffect } from 'react';
-
-import { get, remove, useAlbumSelector } from 'state/redux/albumSlice';
-import { useAppDispatch } from 'state/redux/store';
+import { useDeleteAlbumMutation, useLazyGetAlbumsQuery } from 'apis/json-placeholder-api/albums-api';
 
 export const useAlbumService = () => {
-	const dispatch = useAppDispatch();
-	const albums = useAlbumSelector((state) => state.albums.value);
-
-	useEffect(() => {
-		// console.log(albums);
-	}, [albums]);
+	const [callGetAlbums, { data }] = useLazyGetAlbumsQuery();
+	const [callDeleteAlbum] = useDeleteAlbumMutation();
 
 	const getAlbums = async (id: number | null = null) => {
-		await dispatch(get(id));
+		const albums = await callGetAlbums(id);
+		return albums.data;
 	};
 
-	const removeAlbum = (id: number) => {
-		dispatch(remove(id));
+	const deleteAlbum = (id: number) => {
+		callDeleteAlbum(id);
 	};
 
 	return {
-		albums,
+		data,
 		getAlbums,
-		removeAlbum
+		deleteAlbum
 	};
 };

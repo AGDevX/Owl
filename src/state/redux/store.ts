@@ -2,7 +2,8 @@ import { useDispatch } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 
-import albumReducer from './albumSlice';
+import { jsonPlaceholderApi } from 'apis/json-placeholder-api';
+
 import appConfigReducer from './appConfigSlice';
 import counterReducer from './counterSlice';
 import userReducer from './userSlice';
@@ -12,8 +13,9 @@ export const store = configureStore({
 		appConfig: appConfigReducer,
 		user: userReducer,
 		counter: counterReducer,
-		albums: albumReducer
-	}
+		[jsonPlaceholderApi.reducerPath]: jsonPlaceholderApi.reducer
+	},
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(jsonPlaceholderApi.middleware)
 });
 
 export type RootState = ReturnType<typeof store.getState>;

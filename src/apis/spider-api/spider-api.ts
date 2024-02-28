@@ -1,7 +1,7 @@
+import { accessTokenRetriever } from 'auth/accessTokenRetriever';
+
 import { AppHttpResponse } from 'apis/AppHttpResponse';
 import { handleHttpResponse, handleNetworkError } from 'apis/http-response-handlers';
-
-import { accessTokenRetriever } from 'auth/accessTokenRetriever';
 
 import { SpiderApiResponse } from './SpiderApiResponse';
 import { UserInfo } from './UserInfo';
@@ -26,3 +26,19 @@ export const getUserInfo = async (email: string): Promise<AppHttpResponse<Spider
 		.then(handleHttpResponse<SpiderApiResponse<UserInfo>>)
 		.catch(handleNetworkError);
 };
+
+//-- https://stackoverflow.com/questions/71573317/how-to-invalidate-rtk-query-cachesreset-state-globally
+// export const baseApi = createApi({
+//   baseQuery: fetchBaseQuery({
+//     baseUrl: `${BASE_URL}/api`,
+//     prepareHeaders: (headers, { getState }) => {
+//       const token = (getState() as RootState).auth.token;
+//       if (token) {
+//         headers.set("authorization", `Bearer ${token}`);
+//       }
+//       return headers;
+//     },
+//   }),
+//   tagTypes: ["Vehicle", "CompanySetting", "Associate"],
+//   endpoints: () => ({}),
+// });
