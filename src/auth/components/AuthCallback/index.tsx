@@ -13,7 +13,7 @@ export const AuthCallback = (): React.ReactNode => {
 
 	const getAuthNReturnRoute = async () => {
 		const authTypeQueryParam = search.get('auth-type');
-		const isSignOut = authTypeQueryParam === AuthType.SignOut ?? false;
+		const isSignOut = authTypeQueryParam === AuthType.SignOut || false;
 		const route = await getAuthReturnRoute(isSignOut);
 		setReturnRoute(route);
 	};

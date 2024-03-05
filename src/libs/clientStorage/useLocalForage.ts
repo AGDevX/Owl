@@ -1,4 +1,4 @@
-import * as localforage from 'localforage';
+import { default as localforage } from 'localforage';
 
 import { ILocalForageConfig } from 'environments/IConfig';
 

@@ -2,7 +2,7 @@ import { TypedUseSelectorHook, useSelector } from 'react-redux';
 
 import { createSlice } from '@reduxjs/toolkit';
 
-import { InitialState } from 'state/InitialState';
+import { InitialState } from '../initialState';
 
 import type { RootState } from './store';
 
