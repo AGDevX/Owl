@@ -1,10 +1,10 @@
 //-- https://github.com/FiloSottile/mkcert
-
-import hostile from 'hostile';
 import { exec } from 'child_process';
-const env = require('../environments/env.local');
+import hostile from 'hostile';
 
-const createLocalSsl = (platform) => {
+import { env } from '../environments/env.local.ts';
+
+const createLocalSsl = (platform: string) => {
 	const localDomain = env.HOST.name;
 	const localhost = 'localhost';
 	const localIpV4 = '127.0.0.1';
@@ -30,7 +30,7 @@ const createLocalSsl = (platform) => {
 	}
 };
 
-const addHostsFileEntry = (ip, url) => {
+const addHostsFileEntry = (ip: string, url: string) => {
 	hostile.set(ip, url, function (err) {
 		if (err) {
 			console.error(`Unable to add '${ip} ${url}' to the hosts file`, err);
@@ -40,7 +40,7 @@ const addHostsFileEntry = (ip, url) => {
 	});
 };
 
-const createLocalSslWindows = (addresses) => {
+const createLocalSslWindows = (addresses: Array<string>) => {
 	exec(
 		"powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
 	);

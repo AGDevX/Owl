@@ -39,8 +39,7 @@ const env: IEnvironment = {
 		}
 	},
 	APP_INITIAL_STATE: {
-		counter: 12,
-		albums: []
+		counter: 12
 	},
 	CLIENT_STORAGE: {
 		provider: 'localForage',

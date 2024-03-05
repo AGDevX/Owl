@@ -27,7 +27,6 @@ interface IHostConfig {
 interface IAppConfig {
 	name: string;
 	description: string;
-	showReactRouterDomErrorPage: boolean;
 	enableServiceWorker: boolean;
 	autoSignIn: boolean;
 }
