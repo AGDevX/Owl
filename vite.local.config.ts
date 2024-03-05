@@ -1,10 +1,9 @@
 import fs from 'fs';
-import { mergeConfig, defineConfig } from 'vite';
-import { createHtmlPlugin } from 'vite-plugin-html';
 import copy from 'rollup-plugin-copy';
+import { defineConfig, mergeConfig } from 'vite';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
-import env from './environments/env.local';
-
+import { env } from './environments/env.local';
 import { viteConfig } from './vite.config';
 
 export default mergeConfig(

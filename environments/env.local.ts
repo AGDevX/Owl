@@ -1,6 +1,6 @@
 import { IEnvironment } from './IConfig';
 
-const env: IEnvironment = {
+export const env: IEnvironment = {
 	ENVIRONMENT: {
 		app: 'local',
 		node: 'development'
@@ -39,8 +39,7 @@ const env: IEnvironment = {
 		}
 	},
 	APP_INITIAL_STATE: {
-		counter: 12,
-		albums: []
+		counter: 12
 	},
 	CLIENT_STORAGE: {
 		provider: 'localForage',
@@ -53,5 +52,3 @@ const env: IEnvironment = {
 		}
 	}
 };
-
-export default env;
