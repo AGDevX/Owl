@@ -2,12 +2,12 @@ import { AppRouteType } from './AppRouteType';
 import { IAppRoute } from './IAppRoute';
 import { authRoutes } from './routes.auth';
 import { counterRoutes } from './routes.counter';
-import { fooBarRoutes } from './routes.fooBar';
+// import { fooBarRoutes } from './routes.fooBar';
 import { homeRoutes } from './routes.home';
 import { structureRoutes } from './routes.structure';
 import { userRoutes } from './routes.user';
 
-export const allRoutes = [...authRoutes, ...homeRoutes, ...userRoutes, ...counterRoutes, ...fooBarRoutes, ...structureRoutes];
+export const allRoutes = [...authRoutes, ...homeRoutes, ...userRoutes, ...counterRoutes, ...structureRoutes];
 export const publicRoutes = allRoutes.filter((r) => !r.private);
 export const privateRoutes = allRoutes.filter((r) => r.private);
 
