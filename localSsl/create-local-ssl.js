@@ -1,7 +1,7 @@
 //-- https://github.com/FiloSottile/mkcert
 
-const hostile = require('hostile');
-const { exec } = require('child_process');
+import hostile from 'hostile';
+import { exec } from 'child_process';
 const env = require('../environments/env.local');
 
 const createLocalSsl = (platform) => {
